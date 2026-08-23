@@ -12,12 +12,12 @@ const sessionSchema = z.object({ id: z.string(), type: z.string(), number: z.num
 
 const wait = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 async function request(path: string, optional = false): Promise<unknown> {
-  for (let attempt = 0; attempt < 3; attempt++) {
+  for (let attempt = 0; attempt < 5; attempt++) {
     const controller = new AbortController(); const timeout = setTimeout(() => controller.abort(), 20_000)
     try {
       const response = await fetch(`${API}/${path}`, { signal: controller.signal, headers: { accept: 'application/json', 'user-agent': 'MotoRaceData/2.0' } })
       if (optional && [204, 400, 403, 404].includes(response.status)) return null
-      if (response.ok) return response.json()
+      if (response.ok) { const data = await response.json(); await wait(100); return data }
       if (response.status !== 429 && response.status < 500) throw new Error(`${path}: HTTP ${response.status}`)
       await wait(Number(response.headers.get('retry-after') ?? 2 ** attempt) * 1000)
     } finally { clearTimeout(timeout) }
@@ -29,7 +29,7 @@ async function request(path: string, optional = false): Promise<unknown> {
   throw new Error(`${path}: failed after 3 attempts`)
 }
 
-async function pool<T, R>(items: T[], worker: (item: T) => Promise<R>, limit = 4): Promise<R[]> {
+async function pool<T, R>(items: T[], worker: (item: T) => Promise<R>, limit = 1): Promise<R[]> {
   const result: R[] = new Array(items.length); let cursor = 0
   await Promise.all(Array.from({ length: Math.min(limit, items.length) }, async () => { while (cursor < items.length) { const index = cursor++; result[index] = await worker(items[index]) } }))
   return result
@@ -54,7 +54,11 @@ async function generateSeason(season: z.infer<typeof seasonSchema>) {
   for (const category of normalizedCategories) {
     const eventBundles = await pool(normalizedEvents, async (event) => {
       const rawSessions = z.array(sessionSchema).parse((await request(`results/sessions?eventUuid=${event.id}&categoryUuid=${category.id}`, true)) ?? [])
-      const sessions = await pool(rawSessions, async (session) => {
+      const relevantSessions = season.year < 2020 ? rawSessions.filter((session) => {
+        const type = session.type.toUpperCase()
+        return type === 'RAC' || ['SPR', 'SPRINT', 'Q2'].includes(type) || (type === 'Q' && session.number === 2)
+      }) : rawSessions
+      const sessions = await pool(relevantSessions, async (session) => {
         const raw: any = await request(`results/session/${session.id}/classification?seasonYear=${season.year}&test=false`, true)
         let classification = (raw?.classification ?? []).map(normalizeResult)
         if (!classification.length) classification = await previousClassification(season.year, event.id, category.legacyId, session.id)
@@ -77,7 +81,7 @@ async function writeJson(path: string, value: unknown) { await mkdir(dirname(pat
 async function main() {
   const seasons = z.array(seasonSchema).parse(await request('results/seasons'))
   const requested = process.argv.find((arg) => arg.startsWith('--years='))?.split('=')[1]?.split(',').map(Number)
-  const selected = seasons.filter((season) => season.year >= 2020 && (requested ? requested.includes(season.year) : season.current))
+  const selected = seasons.filter((season) => season.year >= 2012 && (requested ? requested.includes(season.year) : season.current))
   for (const season of selected) await generateSeason(season)
   const available = (await readdir(join(output, 'seasons'), { withFileTypes: true })).filter((item) => item.isDirectory() && /^\d{4}$/.test(item.name)).map((item) => Number(item.name)).sort()
   const listed = seasons.filter((season) => available.includes(season.year))

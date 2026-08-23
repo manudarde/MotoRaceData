@@ -1,15 +1,15 @@
 .about-page { display: grid; gap: 22px; max-width: 1050px; }
-.about-intro, .about-grid section, .about-contact { border: 1px solid var(--line); background: var(--surface); box-shadow: var(--shadow); }
-.about-intro { padding: clamp(26px, 5vw, 54px); border-radius: 20px; background: radial-gradient(circle at 90% 10%, color-mix(in srgb, var(--accent) 20%, transparent), transparent 32%), var(--surface); }
+.about-intro, .about-grid section, .about-contact { border: 1px solid var(--line); background: var(--surface); box-shadow: none; }
+.about-intro { padding: clamp(26px, 5vw, 54px); border-radius: 4px; background: var(--surface); }
 .about-intro h2 { max-width: 720px; margin: 14px 0 22px; font-size: clamp(28px, 4vw, 46px); line-height: 1.05; letter-spacing: -.035em; }
 .about-intro > p:not(.eyebrow) { max-width: 780px; color: var(--muted); font-size: 16px; line-height: 1.75; }
 .about-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
-.about-grid section { padding: 26px; border-radius: 14px; }
+.about-grid section { padding: 26px; border-radius: 4px; }
 .about-grid h2, .about-contact h2 { margin: 0 0 10px; font-size: 18px; }
 .about-grid p, .about-contact p { margin: 0; color: var(--muted); line-height: 1.65; }
-.about-contact { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 28px; border-radius: 14px; }
+.about-contact { display: flex; align-items: center; justify-content: space-between; gap: 28px; padding: 28px; border-radius: 4px; }
 .about-contact .eyebrow { margin: 0 0 8px; }
-.about-button { flex: none; padding: 12px 18px; border-radius: 9px; background: var(--text); color: var(--bg); text-decoration: none; font-size: 13px; font-weight: 800; }
+.about-button { flex: none; padding: 12px 18px; border-radius: 3px; background: var(--text); color: var(--bg); text-decoration: none; font-size: 13px; font-weight: 800; }
 .about-button:hover { background: var(--accent); color: #fff; }
 .about-legal { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
 
