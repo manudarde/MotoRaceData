@@ -37,7 +37,9 @@ import {
 } from './domain/data'
 import {
   bikeStandings,
+  groupedStatistics,
   pointEntries,
+  racePoints,
   riderEventPositions,
   riderStandings,
   riderStatistics,
@@ -45,6 +47,7 @@ import {
 } from './domain/scoring'
 import type {
   EventBundle,
+  PointEntry,
   RaceBundle,
   Result,
   Session,
@@ -2099,6 +2102,148 @@ function RiderStatisticsView() {
       return finalValue ? [[series.year, finalValue] as const] : []
     }),
   )
+  const selectedRaceEntries = datasets
+    .flatMap(({ entries: bundleEntries }) => bundleEntries)
+    .filter((entry) => entry.riderName === selectedRider && entry.isRace)
+    .sort((a, b) => (a.eventDate ?? '').localeCompare(b.eventDate ?? ''))
+  const rawRaceResults = datasets.flatMap(({ bundle }) =>
+    bundle.events.flatMap((event) => {
+      const races = event.sessions.filter(
+        (session) => session.type.toUpperCase() === 'RAC',
+      )
+      const counted = races.some((session) => session.number === 2)
+        ? races.filter((session) => session.number === 2)
+        : races
+      return counted.flatMap((session) =>
+        session.classification
+          .filter((result) => result.riderName === selectedRider)
+          .map((result) => ({
+            ...result,
+            date: event.startDate ?? '',
+            event: event.name,
+            category: bundle.category.name.replace('™', ''),
+          })),
+      )
+    }),
+  )
+  const categorySummaryRows = ['MotoGP', 'Moto2', 'Moto3'].flatMap(
+    (category) => {
+      const starts = rawRaceResults.filter(
+        (result) => result.category === category,
+      )
+      const categoryEntries = datasets
+        .filter(
+          ({ bundle }) => bundle.category.name.replace('™', '') === category,
+        )
+        .flatMap(({ entries: bundleEntries }) => bundleEntries)
+        .filter((entry) => entry.riderName === selectedRider)
+      const raceEntries = categoryEntries.filter((entry) => entry.isRace)
+      if (!starts.length && !categoryEntries.length) return []
+      const wins = raceEntries.filter((entry) => entry.position === 1).length
+      const podiums = raceEntries.filter(
+        (entry) => (entry.position ?? 99) <= 3,
+      ).length
+      const points = categoryEntries.reduce(
+        (sum, entry) => sum + entry.points,
+        0,
+      )
+      const average = raceEntries.length
+        ? raceEntries.reduce((sum, entry) => sum + (entry.position ?? 0), 0) /
+          raceEntries.length
+        : null
+      return [
+        {
+          category,
+          starts: starts.length,
+          winRate: percent(wins, starts.length),
+          podiumRate: percent(podiums, starts.length),
+          pointsStart: starts.length
+            ? (points / starts.length).toFixed(1)
+            : '—',
+          average: average?.toFixed(1) ?? '—',
+          dnfRate: percent(
+            starts.filter((result) => result.position === null).length,
+            starts.length,
+          ),
+        },
+      ]
+    },
+  )
+  const eventForm = [
+    ...new Map(
+      selectedRaceEntries.map((entry) => [
+        `${entry.eventDate}-${entry.eventId}`,
+        {
+          date: entry.eventDate ?? '',
+          points: entry.points,
+          position: entry.position ?? 99,
+        },
+      ]),
+    ).values(),
+  ].sort((a, b) => a.date.localeCompare(b.date))
+  const longestStreak = (
+    test: (event: (typeof eventForm)[number]) => boolean,
+  ) => {
+    let longest = 0
+    let current = 0
+    eventForm.forEach((event) => {
+      current = test(event) ? current + 1 : 0
+      longest = Math.max(longest, current)
+    })
+    return longest
+  }
+  const teammateComparisons = ['MotoGP', 'Moto2', 'Moto3'].flatMap(
+    (category) => {
+      const categoryDatasets = datasets.filter(
+        ({ bundle }) => bundle.category.name.replace('™', '') === category,
+      )
+      const names = [
+        ...new Set(
+          categoryDatasets.flatMap(({ entries: bundleEntries }) => {
+            const riderRows = bundleEntries.filter(
+              (entry) => entry.isRace && entry.riderName === selectedRider,
+            )
+            const teams = new Set(riderRows.map((entry) => entry.teamName))
+            return bundleEntries
+              .filter(
+                (entry) =>
+                  entry.isRace &&
+                  entry.riderName !== selectedRider &&
+                  teams.has(entry.teamName),
+              )
+              .map((entry) => entry.riderName)
+          }),
+        ),
+      ].sort((a, b) => a.localeCompare(b))
+      return names.flatMap((teammate) => {
+        const pairs = categoryDatasets.flatMap(({ entries: bundleEntries }) => {
+          const riderByEvent = new Map(
+            bundleEntries
+              .filter(
+                (entry) => entry.isRace && entry.riderName === selectedRider,
+              )
+              .map((entry) => [entry.eventId, entry]),
+          )
+          return bundleEntries
+            .filter((entry) => entry.isRace && entry.riderName === teammate)
+            .flatMap((other) => {
+              const rider = riderByEvent.get(other.eventId)
+              return rider && rider.teamName === other.teamName
+                ? [{ rider, other }]
+                : []
+            })
+        })
+        return pairs.length ? [{ category, teammate, pairs }] : []
+      })
+    },
+  )
+  const firstRace = rawRaceResults
+    .filter((result) => result.date)
+    .sort((a, b) => a.date.localeCompare(b.date))[0]
+  const firstWin = selectedRaceEntries.find((entry) => entry.position === 1)
+  const firstPodium = selectedRaceEntries.find(
+    (entry) => (entry.position ?? 99) <= 3,
+  )
   const loading =
     manifest.isLoading || raceQueries.some((raceQuery) => raceQuery.isLoading)
   const error =
@@ -2131,6 +2276,106 @@ function RiderStatisticsView() {
       <DataGate loading={loading} error={error}>
         {selectedRider ? (
           <>
+            <div className="section-heading statistics-subheading">
+              <p className="eyebrow">Career snapshot</p>
+              <h2>Performance Summary</h2>
+            </div>
+            <DataTable
+              rows={categorySummaryRows}
+              rowKey={(row) => row.category}
+              columns={[
+                {
+                  key: 'category',
+                  label: 'Category',
+                  value: (row) => <strong>{row.category}</strong>,
+                },
+                {
+                  key: 'starts',
+                  label: 'Starts',
+                  value: (row) => row.starts,
+                  align: 'right',
+                },
+                {
+                  key: 'winRate',
+                  label: 'Win %',
+                  value: (row) => row.winRate,
+                  align: 'right',
+                },
+                {
+                  key: 'podiumRate',
+                  label: 'Podium %',
+                  value: (row) => row.podiumRate,
+                  align: 'right',
+                },
+                {
+                  key: 'pointsStart',
+                  label: 'Pts/start',
+                  value: (row) => row.pointsStart,
+                  align: 'right',
+                },
+                {
+                  key: 'average',
+                  label: 'Avg finish',
+                  value: (row) => row.average,
+                  align: 'right',
+                },
+                {
+                  key: 'dnfRate',
+                  label: 'DNF %',
+                  value: (row) => row.dnfRate,
+                  align: 'right',
+                },
+              ]}
+            />
+
+            <div className="section-heading statistics-subheading">
+              <p className="eyebrow">Career landmarks</p>
+              <h2>Milestones & Streaks</h2>
+            </div>
+            <DataTable
+              rows={[
+                {
+                  metric: 'First start',
+                  value: firstRace
+                    ? `${firstRace.event} · ${firstRace.date.slice(0, 4)}`
+                    : '—',
+                },
+                {
+                  metric: 'First podium',
+                  value: firstPodium
+                    ? `${firstPodium.eventName} · ${firstPodium.eventDate?.slice(0, 4) ?? '—'}`
+                    : '—',
+                },
+                {
+                  metric: 'First victory',
+                  value: firstWin
+                    ? `${firstWin.eventName} · ${firstWin.eventDate?.slice(0, 4) ?? '—'}`
+                    : '—',
+                },
+                {
+                  metric: 'Longest points streak',
+                  value: `${longestStreak((event) => event.points > 0)} races`,
+                },
+                {
+                  metric: 'Longest podium streak',
+                  value: `${longestStreak((event) => event.position <= 3)} races`,
+                },
+                {
+                  metric: 'Longest win streak',
+                  value: `${longestStreak((event) => event.position === 1)} races`,
+                },
+              ]}
+              rowKey={(row) => row.metric}
+              columns={[
+                {
+                  key: 'metric',
+                  label: 'Metric',
+                  value: (row) => <strong>{row.metric}</strong>,
+                },
+                { key: 'value', label: 'Result', value: (row) => row.value },
+              ]}
+            />
+
             <div className="section-heading statistics-subheading">
               <p className="eyebrow">Championship progression</p>
               <h2>Cumulative Points by Race</h2>
@@ -2403,6 +2648,95 @@ function RiderStatisticsView() {
             />
 
             <div className="section-heading statistics-subheading">
+              <p className="eyebrow">Same-bike benchmark</p>
+              <h2>Teammate Comparison</h2>
+            </div>
+            {teammateComparisons.length ? (
+              teammateComparisons.map(({ category, teammate, pairs }) => (
+                <div className="chart-card" key={`${category}-${teammate}`}>
+                  <div className="chart-toolbar">
+                    <h2>
+                      {category} · {teammate}
+                    </h2>
+                  </div>
+                  <DataTable
+                    rows={[
+                      {
+                        rider: selectedRider,
+                        wins: pairs.filter(
+                          ({ rider, other }) =>
+                            (rider.position ?? 999) < (other.position ?? 999),
+                        ).length,
+                        points: pairs.reduce(
+                          (sum, pair) => sum + pair.rider.points,
+                          0,
+                        ),
+                        average:
+                          pairs.reduce(
+                            (sum, pair) => sum + (pair.rider.position ?? 0),
+                            0,
+                          ) / pairs.length,
+                      },
+                      {
+                        rider: teammate,
+                        wins: pairs.filter(
+                          ({ rider, other }) =>
+                            (other.position ?? 999) < (rider.position ?? 999),
+                        ).length,
+                        points: pairs.reduce(
+                          (sum, pair) => sum + pair.other.points,
+                          0,
+                        ),
+                        average:
+                          pairs.reduce(
+                            (sum, pair) => sum + (pair.other.position ?? 0),
+                            0,
+                          ) / pairs.length,
+                      },
+                    ]}
+                    rowKey={(row) => row.rider}
+                    columns={[
+                      {
+                        key: 'rider',
+                        label: 'Rider',
+                        value: (row) => <strong>{row.rider}</strong>,
+                      },
+                      {
+                        key: 'starts',
+                        label: 'Shared races',
+                        value: () => pairs.length,
+                        align: 'right',
+                      },
+                      {
+                        key: 'wins',
+                        label: 'H2H wins',
+                        value: (row) => row.wins,
+                        sort: (row) => row.wins,
+                        align: 'right',
+                      },
+                      {
+                        key: 'average',
+                        label: 'Avg finish',
+                        value: (row) => row.average.toFixed(1),
+                        sort: (row) => row.average,
+                        align: 'right',
+                      },
+                      {
+                        key: 'points',
+                        label: 'Race pts',
+                        value: (row) => formatPoints(row.points),
+                        sort: (row) => row.points,
+                        align: 'right',
+                      },
+                    ]}
+                  />
+                </div>
+              ))
+            ) : (
+              <Empty>No same-team race comparison is available.</Empty>
+            )}
+
+            <div className="section-heading statistics-subheading">
               <p className="eyebrow">Season scoring</p>
               <h2>Points by Year</h2>
             </div>
@@ -2497,6 +2831,223 @@ function RiderStatisticsView() {
   )
 }
 
+type PerformanceRow = Statistics & {
+  dnfs: number
+  classifiedStarts: number
+  averageFinish: number | null
+  consistency: number | null
+}
+
+const percent = (value: number, total: number) =>
+  total ? `${((value / total) * 100).toFixed(1)}%` : '—'
+
+function performanceRows(
+  rows: (Statistics & { dnfs: number })[],
+  entries: PointEntry[],
+): PerformanceRow[] {
+  return rows.map((row) => {
+    const finishes = entries.flatMap((entry) =>
+      entry.isRace && entry.riderName === row.name && entry.position !== null
+        ? [entry.position]
+        : [],
+    )
+    const averageFinish = finishes.length
+      ? finishes.reduce((sum, value) => sum + value, 0) / finishes.length
+      : null
+    const consistency =
+      averageFinish !== null && finishes.length > 1
+        ? Math.sqrt(
+            finishes.reduce(
+              (sum, value) => sum + (value - averageFinish) ** 2,
+              0,
+            ) / finishes.length,
+          )
+        : null
+    return {
+      ...row,
+      classifiedStarts: row.starts,
+      starts: row.starts + row.dnfs,
+      averageFinish,
+      consistency,
+    }
+  })
+}
+
+function PerformanceTable({ rows }: { rows: PerformanceRow[] }) {
+  return (
+    <>
+      <p className="statistics-description">
+        Rates include every race start. Consistency is the standard deviation of
+        classified finishes, where a lower number means steadier results.
+      </p>
+      <DataTable
+        rows={rows}
+        rowKey={(row) => row.name}
+        columns={[
+          {
+            key: 'rider',
+            label: 'Rider',
+            value: (row) => <strong>{row.name}</strong>,
+            sort: (row) => row.name,
+          },
+          {
+            key: 'starts',
+            label: 'Starts',
+            value: (row) => row.starts,
+            sort: (row) => row.starts,
+            align: 'right',
+          },
+          {
+            key: 'winRate',
+            label: 'Win %',
+            value: (row) => percent(row.wins, row.starts),
+            sort: (row) => (row.starts ? row.wins / row.starts : 0),
+            align: 'right',
+          },
+          {
+            key: 'podiumRate',
+            label: 'Podium %',
+            value: (row) => percent(row.podiums, row.starts),
+            sort: (row) => (row.starts ? row.podiums / row.starts : 0),
+            align: 'right',
+          },
+          {
+            key: 'pointsStart',
+            label: 'Pts/start',
+            value: (row) =>
+              row.starts ? (row.points / row.starts).toFixed(1) : '—',
+            sort: (row) => (row.starts ? row.points / row.starts : 0),
+            align: 'right',
+          },
+          {
+            key: 'averageFinish',
+            label: 'Avg finish',
+            value: (row) => row.averageFinish?.toFixed(1) ?? '—',
+            sort: (row) => row.averageFinish ?? 999,
+            align: 'right',
+          },
+          {
+            key: 'finishRate',
+            label: 'Finish %',
+            value: (row) => percent(row.classifiedStarts, row.starts),
+            sort: (row) => (row.starts ? row.classifiedStarts / row.starts : 0),
+            align: 'right',
+          },
+          {
+            key: 'dnfRate',
+            label: 'DNF %',
+            value: (row) => percent(row.dnfs, row.starts),
+            sort: (row) => (row.starts ? row.dnfs / row.starts : 0),
+            align: 'right',
+          },
+          {
+            key: 'consistency',
+            label: 'Consistency',
+            value: (row) => row.consistency?.toFixed(2) ?? '—',
+            sort: (row) => row.consistency ?? 999,
+            align: 'right',
+          },
+        ]}
+      />
+    </>
+  )
+}
+
+function ConstructorStatistics({ entries }: { entries: PointEntry[] }) {
+  const [group, setGroup] = useState('constructor')
+  const rows = groupedStatistics(entries, group === 'team' ? 'team' : 'bike')
+  return (
+    <>
+      <PageHeader
+        title="Constructor & Team Statistics"
+        description="Compare scoring, victories, podiums and rider contributions for the selected season."
+      />
+      <BaseFilters />
+      <Tabs value={group} set={setGroup} values={['constructor', 'team']} />
+      <DataTable
+        rows={rows}
+        rowKey={(row) => row.name}
+        columns={[
+          {
+            key: 'pos',
+            label: 'Pos',
+            value: (row) => row.position,
+            sort: (row) => row.position,
+          },
+          {
+            key: 'name',
+            label: group === 'team' ? 'Team' : 'Constructor',
+            value: (row) => <strong>{row.name}</strong>,
+            sort: (row) => row.name,
+          },
+          {
+            key: 'wins',
+            label: 'Wins',
+            value: (row) => row.wins,
+            sort: (row) => row.wins,
+            align: 'right',
+          },
+          {
+            key: 'podiums',
+            label: 'Podiums',
+            value: (row) => row.podiums,
+            sort: (row) => row.podiums,
+            align: 'right',
+          },
+          {
+            key: 'racePoints',
+            label: 'Race pts',
+            value: (row) => formatPoints(row.racePoints),
+            sort: (row) => row.racePoints,
+            align: 'right',
+          },
+          {
+            key: 'sprintPoints',
+            label: 'Sprint pts',
+            value: (row) => formatPoints(row.sprintPoints),
+            sort: (row) => row.sprintPoints,
+            align: 'right',
+          },
+          {
+            key: 'points',
+            label: 'Total',
+            value: (row) => <strong>{formatPoints(row.points)}</strong>,
+            sort: (row) => row.points,
+            align: 'right',
+          },
+          {
+            key: 'share',
+            label: 'Leader share',
+            value: (row) => {
+              const riderTotals = riderStandings(
+                entries.filter(
+                  (entry) =>
+                    (group === 'team'
+                      ? entry.teamName
+                      : entry.constructorName) === row.name,
+                ),
+              )
+              return percent(riderTotals[0]?.points ?? 0, row.points)
+            },
+            sort: (row) => {
+              const riderTotals = riderStandings(
+                entries.filter(
+                  (entry) =>
+                    (group === 'team'
+                      ? entry.teamName
+                      : entry.constructorName) === row.name,
+                ),
+              )
+              return row.points ? (riderTotals[0]?.points ?? 0) / row.points : 0
+            },
+            align: 'right',
+          },
+        ]}
+      />
+    </>
+  )
+}
+
 export function StatisticsPage() {
   const { query, entries, year, category } = usePoints()
   const [params, setParams] = useSearchParams()
@@ -2506,7 +3057,9 @@ export function StatisticsPage() {
       ? 'by rider'
       : requestedScope === 'by-circuit'
         ? 'by circuit'
-        : 'by year'
+        : requestedScope === 'by-constructor'
+          ? 'by constructor'
+          : 'by year'
   const setScope = (nextScope: string) => {
     const next = new URLSearchParams(params)
     if (nextScope === 'by year') next.delete('scope')
@@ -2623,7 +3176,7 @@ export function StatisticsPage() {
         <Tabs
           value={scope}
           set={setScope}
-          values={['by year', 'by rider', 'by circuit']}
+          values={['by year', 'by rider', 'by circuit', 'by constructor']}
         />
         <RiderStatisticsView />
       </>
@@ -2634,9 +3187,20 @@ export function StatisticsPage() {
         <Tabs
           value={scope}
           set={setScope}
-          values={['by year', 'by rider', 'by circuit']}
+          values={['by year', 'by rider', 'by circuit', 'by constructor']}
         />
         <CircuitPage />
+      </>
+    )
+  if (scope === 'by constructor')
+    return (
+      <>
+        <Tabs
+          value={scope}
+          set={setScope}
+          values={['by year', 'by rider', 'by circuit', 'by constructor']}
+        />
+        <ConstructorStatistics entries={entries} />
       </>
     )
   return (
@@ -2644,7 +3208,7 @@ export function StatisticsPage() {
       <Tabs
         value={scope}
         set={setScope}
-        values={['by year', 'by rider', 'by circuit']}
+        values={['by year', 'by rider', 'by circuit', 'by constructor']}
       />
       <PageHeader
         title="Statistics by Year"
@@ -2654,7 +3218,12 @@ export function StatisticsPage() {
       <Tabs
         value={yearView}
         set={setYearView}
-        values={['details', 'points efficiency', 'podium breakdown']}
+        values={[
+          'details',
+          'performance',
+          'points efficiency',
+          'podium breakdown',
+        ]}
       />
       <DataGate loading={loading} error={error}>
         {rows.length ? (
@@ -2666,6 +3235,15 @@ export function StatisticsPage() {
                   <h2>Details</h2>
                 </div>
                 <StatisticsTable rows={rows} showSprint={hasSprint} />
+              </>
+            )}
+            {yearView === 'performance' && (
+              <>
+                <div className="section-heading statistics-subheading">
+                  <p className="eyebrow">Comparable performance</p>
+                  <h2>Performance</h2>
+                </div>
+                <PerformanceTable rows={performanceRows(rows, entries)} />
               </>
             )}
             {yearView === 'points efficiency' && (
@@ -3149,6 +3727,7 @@ export function CircuitPage() {
   const [selectedCircuit, setSelectedCircuit] = useState('')
   const [category, setCategory] = useState(3)
   const [newestFirst, setNewestFirst] = useState(true)
+  const [circuitView, setCircuitView] = useState('results')
   const currentSeasonIndex = years.indexOf(manifest.data?.currentSeason ?? -1)
   const today = new Date().toISOString().slice(0, 10)
   const nextEvent = seasonQueries[currentSeasonIndex]?.data?.events
@@ -3190,6 +3769,48 @@ export function CircuitPage() {
       eventName: column.eventName,
       session: circuitSession(column.bundle, kind),
     }))
+  const specialistRows = [
+    ...new Set(
+      columns.flatMap(
+        (column) =>
+          circuitSession(column.bundle, 'Race')?.classification.map(
+            (result) => result.riderName,
+          ) ?? [],
+      ),
+    ),
+  ]
+    .map((rider) => {
+      const results = columns.flatMap(
+        (column) =>
+          circuitSession(column.bundle, 'Race')?.classification.filter(
+            (result) => result.riderName === rider,
+          ) ?? [],
+      )
+      const finishes = results.flatMap((result) =>
+        result.position === null ? [] : [result.position],
+      )
+      const wins = finishes.filter((position) => position === 1).length
+      const podiums = finishes.filter((position) => position <= 3).length
+      const points = finishes.reduce(
+        (sum, position) => sum + racePoints(position),
+        0,
+      )
+      return {
+        rider,
+        starts: results.length,
+        wins,
+        podiums,
+        average: finishes.length
+          ? finishes.reduce((sum, position) => sum + position, 0) /
+            finishes.length
+          : null,
+        points,
+        dnfs: results.filter((result) => result.position === null).length,
+      }
+    })
+    .sort(
+      (a, b) => b.wins - a.wins || b.podiums - a.podiums || b.points - a.points,
+    )
   const loading =
     manifest.isLoading ||
     seasonQueries.some((query) => query.isLoading) ||
@@ -3229,18 +3850,87 @@ export function CircuitPage() {
           Years: {newestFirst ? 'newest first ↓' : 'oldest first ↑'}
         </button>
       </div>
+      <Tabs
+        value={circuitView}
+        set={setCircuitView}
+        values={['results', 'rider rankings']}
+      />
       <DataGate loading={loading} error={error}>
         {columns.length ? (
-          <div className="circuit-results">
-            <CircuitSessionTable title="Race" columns={makeColumns('Race')} />
-            {category === 3 && (
-              <CircuitSessionTable
-                title="Sprint"
-                columns={makeColumns('Sprint')}
+          circuitView === 'results' ? (
+            <div className="circuit-results">
+              <CircuitSessionTable title="Race" columns={makeColumns('Race')} />
+              {category === 3 && (
+                <CircuitSessionTable
+                  title="Sprint"
+                  columns={makeColumns('Sprint')}
+                />
+              )}
+              <CircuitSessionTable title="Q2" columns={makeColumns('Q2')} />
+            </div>
+          ) : (
+            <>
+              <div className="section-heading statistics-subheading">
+                <p className="eyebrow">Circuit specialists</p>
+                <h2>Rider Rankings</h2>
+              </div>
+              <DataTable
+                rows={specialistRows}
+                rowKey={(row) => row.rider}
+                columns={[
+                  {
+                    key: 'rider',
+                    label: 'Rider',
+                    value: (row) => <strong>{row.rider}</strong>,
+                    sort: (row) => row.rider,
+                  },
+                  {
+                    key: 'starts',
+                    label: 'Starts',
+                    value: (row) => row.starts,
+                    sort: (row) => row.starts,
+                    align: 'right',
+                  },
+                  {
+                    key: 'wins',
+                    label: 'Wins',
+                    value: (row) => row.wins,
+                    sort: (row) => row.wins,
+                    align: 'right',
+                  },
+                  {
+                    key: 'podiums',
+                    label: 'Podiums',
+                    value: (row) => row.podiums,
+                    sort: (row) => row.podiums,
+                    align: 'right',
+                  },
+                  {
+                    key: 'average',
+                    label: 'Avg finish',
+                    value: (row) => row.average?.toFixed(1) ?? '—',
+                    sort: (row) => row.average ?? 999,
+                    align: 'right',
+                  },
+                  {
+                    key: 'pointsStart',
+                    label: 'Pts/start',
+                    value: (row) =>
+                      row.starts ? (row.points / row.starts).toFixed(1) : '—',
+                    sort: (row) => (row.starts ? row.points / row.starts : 0),
+                    align: 'right',
+                  },
+                  {
+                    key: 'dnfs',
+                    label: 'DNFs',
+                    value: (row) => row.dnfs,
+                    sort: (row) => row.dnfs,
+                    align: 'right',
+                  },
+                ]}
               />
-            )}
-            <CircuitSessionTable title="Q2" columns={makeColumns('Q2')} />
-          </div>
+            </>
+          )
         ) : (
           <Empty>No historical events are available for this selection.</Empty>
         )}

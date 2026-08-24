@@ -1092,7 +1092,8 @@ nav {
 .nav-group:nth-child(1) .nav-group-label,
 .nav-group:nth-child(2) .nav-group-label,
 .nav-group:nth-child(3) .nav-group-label,
-.nav-group:nth-child(4) .nav-group-label {
+.nav-group:nth-child(4) .nav-group-label,
+.nav-group:nth-child(5) .nav-group-label {
   position: relative;
   padding-bottom: 8px;
   color: var(--text);
@@ -1102,7 +1103,8 @@ nav {
 .nav-group:nth-child(1) .nav-group-label::after,
 .nav-group:nth-child(2) .nav-group-label::after,
 .nav-group:nth-child(3) .nav-group-label::after,
-.nav-group:nth-child(4) .nav-group-label::after {
+.nav-group:nth-child(4) .nav-group-label::after,
+.nav-group:nth-child(5) .nav-group-label::after {
   content: '';
   display: block;
   width: 28px;
