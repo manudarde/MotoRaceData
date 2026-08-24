@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "d8775754-b53d-483f-8671-fb85d427d60f",
+    "name": "Czech Republic MotoGP™ Official Test",
+    "circuit": "CREDITAS Autodrom Brno",
+    "country": "Czechia",
+    "startDate": "2018-08-06",
+    "endDate": "2018-08-06",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

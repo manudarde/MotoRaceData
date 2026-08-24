@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "year": 2014,
+  "seasonId": "bf5c15b5-f062-4a88-a304-29892743108d",
+  "categories": [
+    {
+      "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+      "name": "MotoGP™",
+      "legacyId": 3
+    },
+    {
+      "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+      "name": "Moto2™",
+      "legacyId": 2
+    },
+    {
+      "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+      "name": "Moto3™",
+      "legacyId": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "9e14f35f-f7f2-4ba6-8898-87ba072c3437",
+      "name": "Commercial Bank Grand Prix of Qatar",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2014-03-20",
+      "endDate": "2014-03-23",
+      "test": false
+    },
+    {
+      "id": "2c09fdaf-abff-487c-8e22-2c35309edb36",
+      "name": "Red Bull Grand Prix of The Americas",
+      "circuit": "Circuit Of The Americas",
+      "country": "United States of America",
+      "startDate": "2014-04-11",
+      "endDate": "2014-04-13",
+      "test": false
+    },
+    {
+      "id": "31751038-df46-40f8-84ac-2e72ed604550",
+      "name": "G.P. Red Bull de la República Argentina",
+      "circuit": "Termas de Río Hondo",
+      "country": "Argentina",
+      "startDate": "2014-04-25",
+      "endDate": "2014-04-27",
+      "test": false
+    },
+    {
+      "id": "8b1cdb37-ab38-4100-b682-14acd26f8e23",
+      "name": "Gran Premio bwin de España",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2014-05-02",
+      "endDate": "2014-05-04",
+      "test": false
+    },
+    {
+      "id": "70c713cf-281d-4067-a5d4-2d658d9da1a1",
+      "name": "Monster Energy Grand Prix de France",
+      "circuit": "Le Mans",
+      "country": "France",
+      "startDate": "2014-05-16",
+      "endDate": "2014-05-18",
+      "test": false
+    },
+    {
+      "id": "52352fdf-c02c-4bf2-80a2-ce39759abd30",
+      "name": "Gran Premio d'Italia TIM",
+      "circuit": "Autodromo Internazionale del Mugello",
+      "country": "Italy",
+      "startDate": "2014-05-30",
+      "endDate": "2014-06-01",
+      "test": false
+    },
+    {
+      "id": "8219b06f-9d87-438f-ac5b-beb230482cbd",
+      "name": "G.P. Monster Energy de Catalunya",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2014-06-13",
+      "endDate": "2014-06-15",
+      "test": false
+    },
+    {
+      "id": "29b06aa5-11c8-4bd4-9c0e-68c285224c1e",
+      "name": "Iveco Daily TT Assen",
+      "circuit": "TT Circuit Assen",
+      "country": "Netherlands",
+      "startDate": "2014-06-26",
+      "endDate": "2014-06-28",
+      "test": false
+    },
+    {
+      "id": "dd0c6253-8dec-47c5-99fd-da656c02394e",
+      "name": "eni Motorrad Grand Prix Deutschland",
+      "circuit": "Sachsenring",
+      "country": "Germany",
+      "startDate": "2014-07-11",
+      "endDate": "2014-07-13",
+      "test": false
+    },
+    {
+      "id": "224493df-7c63-435c-af49-251e15fc64f7",
+      "name": "Red Bull Indianapolis Grand Prix",
+      "circuit": "Indianapolis Motor Speedway",
+      "country": "United States of America",
+      "startDate": "2014-08-08",
+      "endDate": "2014-08-10",
+      "test": false
+    },
+    {
+      "id": "df783f02-e3e9-4654-90e0-13d164061291",
+      "name": "bwin Grand Prix České republiky",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2014-08-15",
+      "endDate": "2014-08-17",
+      "test": false
+    },
+    {
+      "id": "892de713-8179-46b7-9d1c-bc7d85cacd55",
+      "name": "Hertz British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "startDate": "2014-08-29",
+      "endDate": "2014-08-31",
+      "test": false
+    },
+    {
+      "id": "8d51ad93-e751-47ad-9c87-ed58e8f65f13",
+      "name": "GP TIM di San Marino e della Riviera di Rimini",
+      "circuit": "Misano World Circuit Marco Simoncelli",
+      "country": "San Marino",
+      "startDate": "2014-09-12",
+      "endDate": "2014-09-14",
+      "test": false
+    },
+    {
+      "id": "f7e30681-83a4-43c7-b2d6-d3c50b38f639",
+      "name": "Gran Premio Movistar de Aragón",
+      "circuit": "MotorLand Aragón",
+      "country": "Spain",
+      "startDate": "2014-09-26",
+      "endDate": "2014-09-28",
+      "test": false
+    },
+    {
+      "id": "be46a3ac-af9e-41e9-bf45-0c3b7a3e2793",
+      "name": "Motul Grand Prix of Japan",
+      "circuit": "Mobility Resort Motegi",
+      "country": "Japan",
+      "startDate": "2014-10-10",
+      "endDate": "2014-10-12",
+      "test": false
+    },
+    {
+      "id": "8b0e6917-b689-4ab7-a96d-76b7ba9f5610",
+      "name": "Tissot Australian Grand Prix",
+      "circuit": "Phillip Island",
+      "country": "Australia",
+      "startDate": "2014-10-17",
+      "endDate": "2014-10-19",
+      "test": false
+    },
+    {
+      "id": "1b869fa9-da9e-4ee5-90c3-fd3e171ad5ae",
+      "name": "Shell Advance Malaysian Motorcycle GP",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2014-10-24",
+      "endDate": "2014-10-26",
+      "test": false
+    },
+    {
+      "id": "4977e88d-4405-4538-8506-1ead10ed840f",
+      "name": "GP Generali de la Comunitat Valenciana",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2014-11-07",
+      "endDate": "2014-11-09",
+      "test": false
+    }
+  ]
+}

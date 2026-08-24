@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "6d11d74c-a500-468e-9cb1-13707aad1b5e",
+    "name": "Brno MotoGP™ Test",
+    "circuit": "CREDITAS Autodrom Brno",
+    "country": "Czechia",
+    "startDate": "2019-08-05",
+    "endDate": "2019-08-05",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "7b0cbc44-3da2-422c-b32e-88522a267c55",
+      "type": "T",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2019-08-05T08:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

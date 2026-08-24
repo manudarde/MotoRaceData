@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2013,
+  "event": {
+    "id": "094709e4-31f8-45dc-bfe6-324788bb345f",
+    "name": "Red Bull U.S. Grand Prix",
+    "circuit": "Mazda Raceway",
+    "country": "United States of America",
+    "startDate": "2013-07-19",
+    "endDate": "2013-07-21",
+    "test": false
+  },
+  "category": {
+    "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+    "name": "Moto2™",
+    "legacyId": 2
+  },
+  "sessions": []
+}

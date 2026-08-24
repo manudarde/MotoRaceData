@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "year": 2017,
+  "event": {
+    "id": "17cb5412-fda7-4011-8696-24cf4c2b2c5f",
+    "name": "Qatar Moto2™ - Moto3™ Official Test",
+    "circuit": "Lusail International Circuit",
+    "country": "Qatar",
+    "startDate": "2017-03-17",
+    "endDate": "2017-03-19",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": [
+    {
+      "id": "e7d030cb-073a-4788-bafd-5debb7956a92",
+      "type": "FP",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2017-03-17T12:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "38607a7c-c223-48e5-9cbd-ffb5564e3acb",
+      "type": "FP",
+      "number": 4,
+      "status": "FINISHED",
+      "date": "2017-03-18T13:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "aac8ed2b-d5ee-4fa7-939e-e1bd3334c387",
+      "type": "FP",
+      "number": 5,
+      "status": "FINISHED",
+      "date": "2017-03-18T16:10:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "f4e21028-9f0a-491d-a0fd-371a9753293a",
+      "type": "FP",
+      "number": 6,
+      "status": "FINISHED",
+      "date": "2017-03-18T18:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "d1b1271c-98cc-48fb-a594-8baf5b86bbdb",
+      "type": "FP",
+      "number": 7,
+      "status": "FINISHED",
+      "date": "2017-03-19T12:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "d6382e04-deb3-4d25-b34e-e1c8e10452ad",
+      "type": "FP",
+      "number": 8,
+      "status": "FINISHED",
+      "date": "2017-03-19T15:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

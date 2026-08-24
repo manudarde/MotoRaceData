@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "389d6695-5c9f-4e3c-aa44-abe4092dfe2b",
+    "name": "Jerez MotoGP™ Official Test",
+    "circuit": "Circuito de Jerez - Ángel Nieto",
+    "country": "Spain",
+    "startDate": "2018-05-07",
+    "endDate": "2018-05-07",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "e651ebcd-ce3e-4b7a-bd31-81852bb7ec2d",
+      "type": "DAY",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2018-05-07T08:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

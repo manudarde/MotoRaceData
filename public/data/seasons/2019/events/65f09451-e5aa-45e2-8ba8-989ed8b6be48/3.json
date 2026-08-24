@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "65f09451-e5aa-45e2-8ba8-989ed8b6be48",
+    "name": "Sepang MotoGP™ Test",
+    "circuit": "Petronas Sepang International Circuit",
+    "country": "Malaysia",
+    "startDate": "2019-02-06",
+    "endDate": "2019-02-08",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "68bc68b9-f33c-4b41-b596-6338c813a808",
+      "type": "ATF",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2019-02-06T09:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "1571bbb9-720d-4e3b-8dde-039c1c8b75f2",
+      "type": "ATF",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2019-02-07T09:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "333011b0-ea91-4971-a25c-bd103d48df2d",
+      "type": "ATF",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2019-02-08T09:30:00+00:00",
+      "classification": []
+    }
+  ]
+}

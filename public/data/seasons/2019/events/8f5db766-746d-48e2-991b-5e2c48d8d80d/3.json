@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "8f5db766-746d-48e2-991b-5e2c48d8d80d",
+    "name": "Spielberg Moto2™-Moto3™ Test",
+    "circuit": "Red Bull Ring - Spielberg",
+    "country": "Austria",
+    "startDate": "2019-08-12",
+    "endDate": "2019-08-12",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": []
+}

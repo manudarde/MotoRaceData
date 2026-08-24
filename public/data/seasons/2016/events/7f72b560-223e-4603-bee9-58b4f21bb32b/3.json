@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2016,
+  "event": {
+    "id": "7f72b560-223e-4603-bee9-58b4f21bb32b",
+    "name": "České republiky MotoGP Official Test",
+    "circuit": "CREDITAS Autodrom Brno",
+    "country": "Czechia",
+    "startDate": "2016-08-22",
+    "endDate": "2016-08-22",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": []
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "e1738dc5-531c-46ba-98e0-03cf40924180",
+    "name": "Valencia Moto2™ - Moto3™ Official Test",
+    "circuit": "Circuit Ricardo Tormo",
+    "country": "Spain",
+    "startDate": "2018-02-06",
+    "endDate": "2018-02-08",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": [
+    {
+      "id": "905950b5-3ba3-490c-90d2-de0f8482f196",
+      "type": "FP",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2018-02-06T09:50:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "a32d22cc-1ee2-40ac-9b1b-53ea8382efbd",
+      "type": "FP",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2018-02-06T12:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "2f9068c3-e7b6-4d30-86f4-4a6ebfa7de4b",
+      "type": "FP",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2018-02-06T15:15:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "3683cf3f-4aa4-4561-a0c0-64aecfa576a0",
+      "type": "FP",
+      "number": 4,
+      "status": "FINISHED",
+      "date": "2018-02-07T08:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "f2edc8da-8290-461a-ad23-3e6f9f098a32",
+      "type": "FP",
+      "number": 5,
+      "status": "FINISHED",
+      "date": "2018-02-07T11:10:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "2bcac3d0-67cc-466b-a72e-dad29f751971",
+      "type": "FP",
+      "number": 6,
+      "status": "FINISHED",
+      "date": "2018-02-07T13:50:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "b0dac438-b7a1-4f42-ab30-259e7d21c6b4",
+      "type": "FP",
+      "number": 7,
+      "status": "FINISHED",
+      "date": "2018-02-08T09:50:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "d0fcf417-2516-45e6-aed2-e3e3c69e3a38",
+      "type": "FP",
+      "number": 8,
+      "status": "FINISHED",
+      "date": "2018-02-08T12:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "9809bf3b-ba60-4ef7-91e4-ba75d1ef5842",
+      "type": "FP",
+      "number": 9,
+      "status": "FINISHED",
+      "date": "2018-02-08T15:15:00+00:00",
+      "classification": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "3842dfa7-ba21-4987-9512-5c6b7aa9dbdd",
+    "name": "Jerez MotoE™ Test 1",
+    "circuit": "Circuito de Jerez - Ángel Nieto",
+    "country": "Spain",
+    "startDate": "2019-03-13",
+    "endDate": "2019-03-15",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": []
+}

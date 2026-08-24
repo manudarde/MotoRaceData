@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "e1738dc5-531c-46ba-98e0-03cf40924180",
+    "name": "Valencia Moto2™ - Moto3™ Official Test",
+    "circuit": "Circuit Ricardo Tormo",
+    "country": "Spain",
+    "startDate": "2018-02-06",
+    "endDate": "2018-02-08",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": []
+}

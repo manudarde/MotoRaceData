@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "year": 2015,
+  "seasonId": "cbe871d8-d8fa-47cb-8b63-cabe0015223e",
+  "categories": [
+    {
+      "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+      "name": "MotoGP™",
+      "legacyId": 3
+    },
+    {
+      "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+      "name": "Moto2™",
+      "legacyId": 2
+    },
+    {
+      "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+      "name": "Moto3™",
+      "legacyId": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "c68ece2b-fc82-42b1-a1fb-6a0f4af01d64",
+      "name": "Commercial Bank Grand Prix of Qatar",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2015-03-26",
+      "endDate": "2015-03-29",
+      "test": false
+    },
+    {
+      "id": "902eaad6-a45f-4afd-8ea2-9a409ecc6984",
+      "name": "Red Bull Grand Prix of The Americas",
+      "circuit": "Circuit Of The Americas",
+      "country": "United States of America",
+      "startDate": "2015-04-10",
+      "endDate": "2015-04-12",
+      "test": false
+    },
+    {
+      "id": "a4b6173e-c2b7-4a26-b336-91e025aecfbe",
+      "name": "G.P. Red Bull de la República Argentina",
+      "circuit": "Termas de Río Hondo",
+      "country": "Argentina",
+      "startDate": "2015-04-17",
+      "endDate": "2015-04-19",
+      "test": false
+    },
+    {
+      "id": "4862fda0-e20d-401a-b844-51a1987a7358",
+      "name": "Gran Premio bwin de España",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2015-05-01",
+      "endDate": "2015-05-03",
+      "test": false
+    },
+    {
+      "id": "344ffc63-16b3-4660-8e51-14332d308fd1",
+      "name": "Monster Energy Grand Prix de France",
+      "circuit": "Le Mans",
+      "country": "France",
+      "startDate": "2015-05-15",
+      "endDate": "2015-05-17",
+      "test": false
+    },
+    {
+      "id": "5d08e185-a070-485b-ae74-7a748c73b37c",
+      "name": "Gran Premio d'Italia TIM",
+      "circuit": "Autodromo Internazionale del Mugello",
+      "country": "Italy",
+      "startDate": "2015-05-29",
+      "endDate": "2015-05-31",
+      "test": false
+    },
+    {
+      "id": "89a1ba99-285e-46bc-bef5-cd38a44b3d26",
+      "name": "G.P. Monster Energy de Catalunya",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2015-06-12",
+      "endDate": "2015-06-14",
+      "test": false
+    },
+    {
+      "id": "376ce733-67da-4ecf-aee4-a14094c958f9",
+      "name": "Motul TT Assen",
+      "circuit": "TT Circuit Assen",
+      "country": "Netherlands",
+      "startDate": "2015-06-25",
+      "endDate": "2015-06-27",
+      "test": false
+    },
+    {
+      "id": "78a1a607-2b7c-4e5f-8e8f-47faab764376",
+      "name": "GoPro Motorrad Grand Prix Deutschland",
+      "circuit": "Sachsenring",
+      "country": "Germany",
+      "startDate": "2015-07-10",
+      "endDate": "2015-07-12",
+      "test": false
+    },
+    {
+      "id": "c138ba8a-3246-4ecb-947e-2c18070fdfbc",
+      "name": "Red Bull Indianapolis Grand Prix",
+      "circuit": "Indianapolis Motor Speedway",
+      "country": "United States of America",
+      "startDate": "2015-08-07",
+      "endDate": "2015-08-09",
+      "test": false
+    },
+    {
+      "id": "3b949f7d-6bcb-45b2-954c-b933da5f3061",
+      "name": "bwin Grand Prix České republiky",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2015-08-14",
+      "endDate": "2015-08-16",
+      "test": false
+    },
+    {
+      "id": "8400dc37-c9c2-42d6-88ff-318474fff2a3",
+      "name": "Octo British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "startDate": "2015-08-28",
+      "endDate": "2015-08-30",
+      "test": false
+    },
+    {
+      "id": "c131da87-6089-4ab6-9392-9f3a3e894d75",
+      "name": "GP TIM di San Marino e della Riviera di Rimini",
+      "circuit": "Misano World Circuit Marco Simoncelli",
+      "country": "San Marino",
+      "startDate": "2015-09-11",
+      "endDate": "2015-09-13",
+      "test": false
+    },
+    {
+      "id": "823c5b21-fcd5-4f92-b2c8-d120c9e4f2a2",
+      "name": "Gran Premio Movistar de Aragón",
+      "circuit": "MotorLand Aragón",
+      "country": "Spain",
+      "startDate": "2015-09-25",
+      "endDate": "2015-09-27",
+      "test": false
+    },
+    {
+      "id": "b0c6a7e3-8fcf-4470-b0e5-03befc512ee0",
+      "name": "Motul Grand Prix of Japan",
+      "circuit": "Mobility Resort Motegi",
+      "country": "Japan",
+      "startDate": "2015-10-09",
+      "endDate": "2015-10-11",
+      "test": false
+    },
+    {
+      "id": "3b93eca4-5209-4eef-97b6-4b6809a3542d",
+      "name": "Pramac Australian Motorcycle Grand Prix",
+      "circuit": "Phillip Island",
+      "country": "Australia",
+      "startDate": "2015-10-16",
+      "endDate": "2015-10-18",
+      "test": false
+    },
+    {
+      "id": "87efb841-bbc2-4533-9204-002143751464",
+      "name": "Shell Malaysia Motorcycle Grand Prix",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2015-10-23",
+      "endDate": "2015-10-25",
+      "test": false
+    },
+    {
+      "id": "6e17b155-fac2-447a-83ff-4a3a51936325",
+      "name": "Gran Premio Motul de la Comunitat Valenciana",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2015-11-06",
+      "endDate": "2015-11-08",
+      "test": false
+    },
+    {
+      "id": "64d373c2-754f-4ce4-997c-b30853aa00cc",
+      "name": "Valencia MotoGP™ Official Test",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2014-11-10",
+      "endDate": "2014-11-12",
+      "test": true
+    },
+    {
+      "id": "a2a52e2c-c54d-42aa-9be7-2f4a46521298",
+      "name": "Sepang MotoGP™ Official Test",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2015-02-04",
+      "endDate": "2015-02-07",
+      "test": true
+    },
+    {
+      "id": "169bb854-6f6b-4117-ab96-dca5cb15ff5d",
+      "name": "Valencia Moto2™ - Moto3™ Official Test",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2015-02-10",
+      "endDate": "2015-02-12",
+      "test": true
+    },
+    {
+      "id": "9a38dd53-c9dc-4b4e-afd9-2a54c19cab96",
+      "name": "Jerez Moto2™ - Moto3™ Official Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2015-02-17",
+      "endDate": "2015-02-19",
+      "test": true
+    },
+    {
+      "id": "b14aafa9-ec00-46ee-a66b-eac52095a6d1",
+      "name": "Sepang MotoGP™ Official Test",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2015-02-23",
+      "endDate": "2015-02-26",
+      "test": true
+    },
+    {
+      "id": "49531ef6-9af7-40fb-9bc0-96256f7ace9c",
+      "name": "Qatar MotoGP™ Official Test",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2015-03-14",
+      "endDate": "2015-03-16",
+      "test": true
+    },
+    {
+      "id": "eccb504e-73b2-4cda-a887-6a3ac891cb07",
+      "name": "Jerez Moto2™ - Moto3™ Official Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2015-03-17",
+      "endDate": "2015-03-19",
+      "test": true
+    },
+    {
+      "id": "239e7ffa-fef8-4950-9c30-b5f2bf8c5c8b",
+      "name": "Jerez MotoGP™ Official Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2015-05-04",
+      "endDate": "2015-05-04",
+      "test": true
+    },
+    {
+      "id": "254f728b-4091-4fc4-a46d-edf6e702a457",
+      "name": "Catalunya MotoGP™ Official Test",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2015-06-15",
+      "endDate": "2015-06-15",
+      "test": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "dc79d677-9c2c-40dc-989d-894931877d8f",
+    "name": "Gran Premio d'Italia Oakley",
+    "circuit": "Autodromo Internazionale del Mugello",
+    "country": "Italy",
+    "startDate": "2018-06-01",
+    "endDate": "2018-06-03",
+    "test": false
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

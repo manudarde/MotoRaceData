@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2015,
+  "event": {
+    "id": "eccb504e-73b2-4cda-a887-6a3ac891cb07",
+    "name": "Jerez Moto2™ - Moto3™ Official Test",
+    "circuit": "Circuito de Jerez - Ángel Nieto",
+    "country": "Spain",
+    "startDate": "2015-03-17",
+    "endDate": "2015-03-19",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": []
+}

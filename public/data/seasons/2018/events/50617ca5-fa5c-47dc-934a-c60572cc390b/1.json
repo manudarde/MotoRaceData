@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "50617ca5-fa5c-47dc-934a-c60572cc390b",
+    "name": "Sepang MotoGP™ Official Test",
+    "circuit": "Petronas Sepang International Circuit",
+    "country": "Malaysia",
+    "startDate": "2018-01-28",
+    "endDate": "2018-01-30",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

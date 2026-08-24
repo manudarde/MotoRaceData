@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "c1b9b33b-7277-4474-b769-f2c69f6e793c",
+    "name": "Jerez MotoE™-Moto2™ Test",
+    "circuit": "Circuito de Jerez - Ángel Nieto",
+    "country": "Spain",
+    "startDate": "2018-11-23",
+    "endDate": "2018-11-25",
+    "test": true
+  },
+  "category": {
+    "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+    "name": "Moto2™",
+    "legacyId": 2
+  },
+  "sessions": [
+    {
+      "id": "047e0002-650a-4d79-a46a-5fd787b62701",
+      "type": "FP",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2018-11-23T08:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "bb397fa7-723c-4df2-858e-4d06e70690fb",
+      "type": "FP",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2018-11-23T10:40:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "f62584d5-3173-4224-a079-c4c643ef718e",
+      "type": "FP",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2018-11-23T12:55:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "f8cd9f6f-58f0-4738-9e56-c39673ca0c71",
+      "type": "FP",
+      "number": 4,
+      "status": "FINISHED",
+      "date": "2018-11-23T15:40:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "8c0368e4-8065-4861-b135-cb93b88f8f76",
+      "type": "FP",
+      "number": 5,
+      "status": "FINISHED",
+      "date": "2018-11-24T09:10:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "8dd8d0f0-381e-4d81-80c3-07873ec20d7f",
+      "type": "FP",
+      "number": 6,
+      "status": "FINISHED",
+      "date": "2018-11-24T12:55:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "cfebacfb-7478-43f8-9143-7b69b05dbd24",
+      "type": "FP",
+      "number": 7,
+      "status": "FINISHED",
+      "date": "2018-11-25T09:10:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "0ed2bdd5-d97c-42f1-a33c-659023593c7c",
+      "type": "FP",
+      "number": 8,
+      "status": "FINISHED",
+      "date": "2018-11-25T12:55:00+00:00",
+      "classification": []
+    }
+  ]
+}

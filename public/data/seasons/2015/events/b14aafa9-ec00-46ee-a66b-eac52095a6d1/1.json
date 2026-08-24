@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2015,
+  "event": {
+    "id": "b14aafa9-ec00-46ee-a66b-eac52095a6d1",
+    "name": "Sepang MotoGP™ Official Test",
+    "circuit": "Petronas Sepang International Circuit",
+    "country": "Malaysia",
+    "startDate": "2015-02-23",
+    "endDate": "2015-02-26",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

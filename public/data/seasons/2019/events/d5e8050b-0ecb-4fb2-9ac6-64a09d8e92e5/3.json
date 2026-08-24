@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "d5e8050b-0ecb-4fb2-9ac6-64a09d8e92e5",
+    "name": "Catalunya Moto2™-Moto3™ Test",
+    "circuit": "Circuito de Jerez - Ángel Nieto",
+    "country": "Spain",
+    "startDate": "2019-06-18",
+    "endDate": "2019-06-18",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": []
+}

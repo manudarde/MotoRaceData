@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2016,
+  "event": {
+    "id": "5f856549-001d-4251-be52-43cc9c1eec53",
+    "name": "Valencia MotoGP™ Official Test",
+    "circuit": "Circuit Ricardo Tormo",
+    "country": "Spain",
+    "startDate": "2015-11-10",
+    "endDate": "2015-11-11",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": []
+}

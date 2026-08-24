@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "443982dc-5c33-4e23-b517-d5accd8d2c3e",
+    "name": "Misano MotoGP™ Test",
+    "circuit": "Misano World Circuit Marco Simoncelli",
+    "country": "Italy",
+    "startDate": "2019-08-29",
+    "endDate": "2019-08-30",
+    "test": true
+  },
+  "category": {
+    "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+    "name": "Moto2™",
+    "legacyId": 2
+  },
+  "sessions": []
+}

@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "e2a498d8-656e-499d-9897-7856a971db5c",
+    "name": "Qatar Moto2™-Moto3™ Test",
+    "circuit": "Lusail International Circuit",
+    "country": "Qatar",
+    "startDate": "2019-03-01",
+    "endDate": "2019-03-03",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": [
+    {
+      "id": "a8cfd2c9-ea1c-4940-99f2-f3c118bc7206",
+      "type": "FP",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2019-03-01T11:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "4449e75e-1666-4f24-b76f-7c9d3aacbdc2",
+      "type": "FP",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2019-03-01T14:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "73a9263a-dbc2-4f21-aa6b-1d137194634b",
+      "type": "FP",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2019-03-01T16:20:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "fee95991-d7bc-434d-bfe4-f05820ce07f0",
+      "type": "FP",
+      "number": 4,
+      "status": "FINISHED",
+      "date": "2019-03-02T11:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "846957f4-a40d-4f20-a496-be046bdba38d",
+      "type": "FP",
+      "number": 5,
+      "status": "FINISHED",
+      "date": "2019-03-02T14:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "4bc0b0bd-7605-4071-9f47-22a9a0ba88a7",
+      "type": "FP",
+      "number": 6,
+      "status": "FINISHED",
+      "date": "2019-03-02T16:20:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "63c8178e-d953-4690-9cc7-77a423422879",
+      "type": "FP",
+      "number": 7,
+      "status": "FINISHED",
+      "date": "2019-03-03T11:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "6a9e8ec6-bca5-411c-94b1-de21410bf6bc",
+      "type": "FP",
+      "number": 8,
+      "status": "FINISHED",
+      "date": "2019-03-03T14:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "51ebf926-f367-4c59-846c-381565b3315b",
+      "type": "FP",
+      "number": 9,
+      "status": "FINISHED",
+      "date": "2019-03-03T16:20:00+00:00",
+      "classification": []
+    }
+  ]
+}

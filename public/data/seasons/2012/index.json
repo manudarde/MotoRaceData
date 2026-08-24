@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "year": 2012,
+  "seasonId": "1b0857d2-afa8-4b59-b876-079c68084527",
+  "categories": [
+    {
+      "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+      "name": "MotoGP™",
+      "legacyId": 3
+    },
+    {
+      "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+      "name": "Moto2™",
+      "legacyId": 2
+    },
+    {
+      "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+      "name": "Moto3™",
+      "legacyId": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "94d5ff47-e965-4c6d-bed3-66234d4774a3",
+      "name": "Commercialbank Grand Prix of Qatar",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2012-04-05",
+      "endDate": "2012-04-08",
+      "test": false
+    },
+    {
+      "id": "526dfa56-79c1-4bcb-8e92-02b2668a0d05",
+      "name": "Gran Premio bwin de Espana",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2012-04-27",
+      "endDate": "2012-04-29",
+      "test": false
+    },
+    {
+      "id": "d1e8e126-21c9-4a39-a5b9-36b41ba0cfdf",
+      "name": "Grande Prémio de Portugal Circuito Estoril",
+      "circuit": "Estoril Circuit",
+      "country": "Portugal",
+      "startDate": "2012-05-04",
+      "endDate": "2012-05-06",
+      "test": false
+    },
+    {
+      "id": "70ea05e1-1bb5-45ab-a028-c450c0b5ee32",
+      "name": "Monster Energy Grand Prix de France",
+      "circuit": "Le Mans",
+      "country": "France",
+      "startDate": "2012-05-18",
+      "endDate": "2012-05-20",
+      "test": false
+    },
+    {
+      "id": "19cdbb83-61ef-4c05-88f4-49ddfe6f321c",
+      "name": "Gran Premi Aperol de Catalunya",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2012-06-01",
+      "endDate": "2012-06-03",
+      "test": false
+    },
+    {
+      "id": "e2de2e44-ba61-4585-9f8f-3bf10eb91e42",
+      "name": "Hertz British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "startDate": "2012-06-15",
+      "endDate": "2012-06-17",
+      "test": false
+    },
+    {
+      "id": "664ec94d-c710-4acd-afc1-e3a92a379083",
+      "name": "Iveco TT Assen",
+      "circuit": "TT Circuit Assen",
+      "country": "Netherlands",
+      "startDate": "2012-06-28",
+      "endDate": "2012-06-30",
+      "test": false
+    },
+    {
+      "id": "65525c13-e599-477b-9af2-ac8b4424f659",
+      "name": "eni Motorrad Grand Prix Deutschland",
+      "circuit": "Sachsenring",
+      "country": "Germany",
+      "startDate": "2012-07-06",
+      "endDate": "2012-07-08",
+      "test": false
+    },
+    {
+      "id": "fa158cf8-d529-4cc7-9e12-807010c8c0ed",
+      "name": "Gran Premio d'Italia TIM",
+      "circuit": "Autodromo Internazionale del Mugello",
+      "country": "Italy",
+      "startDate": "2012-07-13",
+      "endDate": "2012-07-15",
+      "test": false
+    },
+    {
+      "id": "3efbe089-3cd5-4ad4-9673-d95497c5ddfb",
+      "name": "Red Bull U.S. Grand Prix",
+      "circuit": "Mazda Raceway",
+      "country": "United States of America",
+      "startDate": "2012-07-27",
+      "endDate": "2012-07-29",
+      "test": false
+    },
+    {
+      "id": "3268be9f-62c2-4fcd-a72b-cbdb75242f1d",
+      "name": "Red Bull Indianapolis Grand Prix",
+      "circuit": "Indianapolis Motor Speedway",
+      "country": "United States of America",
+      "startDate": "2012-08-17",
+      "endDate": "2012-08-19",
+      "test": false
+    },
+    {
+      "id": "d88596e6-d163-43e4-8ff3-443149da9abc",
+      "name": "bwin Grand Prix České republiky",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2012-08-24",
+      "endDate": "2012-08-26",
+      "test": false
+    },
+    {
+      "id": "af6e0ae6-f609-4a20-977e-5cef6098a04e",
+      "name": "GP Aperol di San Marino e Riviera di Rimini",
+      "circuit": "Misano World Circuit Marco Simoncelli",
+      "country": "San Marino",
+      "startDate": "2012-09-14",
+      "endDate": "2012-09-16",
+      "test": false
+    },
+    {
+      "id": "f2be1ea3-57c2-4169-b840-e4795aad9484",
+      "name": "Gran Premio Iveco de Aragón",
+      "circuit": "MotorLand Aragón",
+      "country": "Spain",
+      "startDate": "2012-09-28",
+      "endDate": "2012-09-30",
+      "test": false
+    },
+    {
+      "id": "e30a3c38-aceb-4cba-8ede-d9ce62a1cf05",
+      "name": "AirAsia Grand Prix of Japan",
+      "circuit": "Mobility Resort Motegi",
+      "country": "Japan",
+      "startDate": "2012-10-12",
+      "endDate": "2012-10-14",
+      "test": false
+    },
+    {
+      "id": "cd25c1c6-2df4-407d-81db-522218f75adf",
+      "name": "Malaysian Motorcycle Grand Prix",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2012-10-19",
+      "endDate": "2012-10-21",
+      "test": false
+    },
+    {
+      "id": "59f0e126-065d-480d-a84f-e9200f7efcf3",
+      "name": "AirAsia Australian Grand Prix",
+      "circuit": "Phillip Island",
+      "country": "Australia",
+      "startDate": "2012-10-26",
+      "endDate": "2012-10-28",
+      "test": false
+    },
+    {
+      "id": "2441e043-3137-4962-8cb5-81fb47e8f094",
+      "name": "GP Generali de la Comunitat Valenciana",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2012-11-09",
+      "endDate": "2012-11-11",
+      "test": false
+    }
+  ]
+}

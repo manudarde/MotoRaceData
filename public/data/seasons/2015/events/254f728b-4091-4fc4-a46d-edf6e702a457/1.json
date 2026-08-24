@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2015,
+  "event": {
+    "id": "254f728b-4091-4fc4-a46d-edf6e702a457",
+    "name": "Catalunya MotoGP™ Official Test",
+    "circuit": "Circuit de Barcelona-Catalunya",
+    "country": "Spain",
+    "startDate": "2015-06-15",
+    "endDate": "2015-06-15",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2015,
+  "event": {
+    "id": "169bb854-6f6b-4117-ab96-dca5cb15ff5d",
+    "name": "Valencia Moto2™ - Moto3™ Official Test",
+    "circuit": "Circuit Ricardo Tormo",
+    "country": "Spain",
+    "startDate": "2015-02-10",
+    "endDate": "2015-02-12",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

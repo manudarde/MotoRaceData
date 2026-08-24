@@ -1,0 +1,339 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "seasonId": "cbc5dc8d-3aae-4327-bd88-d1cdeea9b654",
+  "categories": [
+    {
+      "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+      "name": "MotoGP™",
+      "legacyId": 3
+    },
+    {
+      "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+      "name": "Moto2™",
+      "legacyId": 2
+    },
+    {
+      "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+      "name": "Moto3™",
+      "legacyId": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "ca44cf63-c1b0-4f39-94ae-8cfbd02ae405",
+      "name": "VisitQatar Grand Prix",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2019-03-08",
+      "endDate": "2019-03-10",
+      "test": false
+    },
+    {
+      "id": "beb3e72d-4262-4005-bd6b-b7adb16b65d1",
+      "name": "Gran Premio Motul de la República Argentina",
+      "circuit": "Termas de Río Hondo",
+      "country": "Argentina",
+      "startDate": "2019-03-29",
+      "endDate": "2019-03-31",
+      "test": false
+    },
+    {
+      "id": "94c5b415-6d8e-40b0-a0ad-0aed862c92bd",
+      "name": "Red Bull Grand Prix of The Americas",
+      "circuit": "Circuit Of The Americas",
+      "country": "United States of America",
+      "startDate": "2019-04-12",
+      "endDate": "2019-04-14",
+      "test": false
+    },
+    {
+      "id": "0d82d888-3093-4386-8350-5cd232026ccc",
+      "name": "Gran Premio Red Bull de España",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2019-05-03",
+      "endDate": "2019-05-05",
+      "test": false
+    },
+    {
+      "id": "8a98f0c0-9bc5-4131-ae46-574c4b7ef23b",
+      "name": "SHARK Helmets Grand Prix de France",
+      "circuit": "Le Mans",
+      "country": "France",
+      "startDate": "2019-05-17",
+      "endDate": "2019-05-19",
+      "test": false
+    },
+    {
+      "id": "94604f9c-c80d-4352-b5a3-e607683bb9a7",
+      "name": "Gran Premio d'Italia Oakley",
+      "circuit": "Autodromo Internazionale del Mugello",
+      "country": "Italy",
+      "startDate": "2019-05-31",
+      "endDate": "2019-06-02",
+      "test": false
+    },
+    {
+      "id": "eadde283-e0e5-4f8f-9ab5-3d6632acee1b",
+      "name": "Gran Premi Monster Energy de Catalunya",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2019-06-14",
+      "endDate": "2019-06-16",
+      "test": false
+    },
+    {
+      "id": "77394ec7-519b-4033-a62c-8403d1d34fe4",
+      "name": "Motul TT Assen",
+      "circuit": "TT Circuit Assen",
+      "country": "Netherlands",
+      "startDate": "2019-06-28",
+      "endDate": "2019-06-30",
+      "test": false
+    },
+    {
+      "id": "82172f96-314c-4f2b-9505-667ac30fb797",
+      "name": "HJC Helmets Motorrad Grand Prix Deutschland",
+      "circuit": "Sachsenring",
+      "country": "Germany",
+      "startDate": "2019-07-05",
+      "endDate": "2019-07-07",
+      "test": false
+    },
+    {
+      "id": "da631456-67e8-456a-a49d-5a5cec687241",
+      "name": "Monster Energy Grand Prix České republiky",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2019-08-02",
+      "endDate": "2019-08-04",
+      "test": false
+    },
+    {
+      "id": "e1e065ef-69fa-4173-8dc6-9373bbfe33bf",
+      "name": "myWorld Motorrad Grand Prix von Österreich",
+      "circuit": "Red Bull Ring - Spielberg",
+      "country": "Austria",
+      "startDate": "2019-08-09",
+      "endDate": "2019-08-11",
+      "test": false
+    },
+    {
+      "id": "caba939b-52be-4121-9be4-44b86946766a",
+      "name": "GoPro British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "startDate": "2019-08-23",
+      "endDate": "2019-08-25",
+      "test": false
+    },
+    {
+      "id": "bf532a4b-d73b-452e-8e14-0d2c453937b3",
+      "name": "GP Octo di San Marino e della Riviera di Rimini",
+      "circuit": "Misano World Circuit Marco Simoncelli",
+      "country": "San Marino",
+      "startDate": "2019-09-13",
+      "endDate": "2019-09-15",
+      "test": false
+    },
+    {
+      "id": "e7ff42ae-6c6b-408c-ac76-ec3abc2621d0",
+      "name": "Gran Premio Michelin® de Aragon",
+      "circuit": "MotorLand Aragón",
+      "country": "Spain",
+      "startDate": "2019-09-20",
+      "endDate": "2019-09-22",
+      "test": false
+    },
+    {
+      "id": "d180c323-068c-4da3-abda-5a7f72a60572",
+      "name": "PTT Thailand Grand Prix ",
+      "circuit": "Chang International Circuit",
+      "country": "Thailand",
+      "startDate": "2019-10-04",
+      "endDate": "2019-10-06",
+      "test": false
+    },
+    {
+      "id": "580eb480-b8cb-4c2b-9a30-d4ffe48b6982",
+      "name": "Motul Grand Prix of Japan",
+      "circuit": "Mobility Resort Motegi",
+      "country": "Japan",
+      "startDate": "2019-10-18",
+      "endDate": "2019-10-20",
+      "test": false
+    },
+    {
+      "id": "2813fddf-f291-478e-ab6d-2039cd1b0a48",
+      "name": "Pramac Generac Australian Motorcycle GP",
+      "circuit": "Phillip Island",
+      "country": "Australia",
+      "startDate": "2019-10-25",
+      "endDate": "2019-10-27",
+      "test": false
+    },
+    {
+      "id": "a404f94b-60a7-4b39-b810-05b8a2f70214",
+      "name": "Shell Malaysia Motorcycle Grand Prix",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2019-11-01",
+      "endDate": "2019-11-03",
+      "test": false
+    },
+    {
+      "id": "aa8eea43-d9e0-4fd6-8e84-3907e425b8a8",
+      "name": "Gran Premio Motul de la Comunitat Valenciana",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2019-11-15",
+      "endDate": "2019-11-17",
+      "test": false
+    },
+    {
+      "id": "f2dc6b96-efa6-466e-9f71-cccfa44cdad5",
+      "name": "Valencia MotoGP™ Test",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2018-11-20",
+      "endDate": "2018-11-21",
+      "test": true
+    },
+    {
+      "id": "c1b9b33b-7277-4474-b769-f2c69f6e793c",
+      "name": "Jerez MotoE™-Moto2™ Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2018-11-23",
+      "endDate": "2018-11-25",
+      "test": true
+    },
+    {
+      "id": "0f346340-3f47-4bba-ba6f-86da71c3930d",
+      "name": "Jerez MotoGP™ Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2018-11-28",
+      "endDate": "2018-11-29",
+      "test": true
+    },
+    {
+      "id": "65f09451-e5aa-45e2-8ba8-989ed8b6be48",
+      "name": "Sepang MotoGP™ Test",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2019-02-06",
+      "endDate": "2019-02-08",
+      "test": true
+    },
+    {
+      "id": "67f9af1c-61c7-4895-a2bb-f8b83e9df5da",
+      "name": "Jerez Moto2™-Moto3™ Test 1",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2019-02-20",
+      "endDate": "2019-02-22",
+      "test": true
+    },
+    {
+      "id": "e2a498d8-656e-499d-9897-7856a971db5c",
+      "name": "Qatar Moto2™-Moto3™ Test",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2019-03-01",
+      "endDate": "2019-03-03",
+      "test": true
+    },
+    {
+      "id": "3842dfa7-ba21-4987-9512-5c6b7aa9dbdd",
+      "name": "Jerez MotoE™ Test 1",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2019-03-13",
+      "endDate": "2019-03-15",
+      "test": true
+    },
+    {
+      "id": "90a92835-c286-4ebd-bdbd-8d474d4d82ee",
+      "name": "Jerez MotoGP™ Test 2",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2019-05-06",
+      "endDate": "2019-05-06",
+      "test": true
+    },
+    {
+      "id": "262adabf-0624-481c-bac1-c71cb715b8f1",
+      "name": "Jerez Moto2™-Moto3™ Test 2",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2019-05-07",
+      "endDate": "2019-05-07",
+      "test": true
+    },
+    {
+      "id": "9e009f29-5488-4f55-b1e6-a0a52b74a0ab",
+      "name": "Valencia MotoE™ Test",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2019-06-17",
+      "endDate": "2019-06-19",
+      "test": true
+    },
+    {
+      "id": "dba1740b-0b9a-42f0-b1a2-90a18c04cff7",
+      "name": "Catalunya MotoGP™ Test",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2019-06-17",
+      "endDate": "2019-06-17",
+      "test": true
+    },
+    {
+      "id": "d5e8050b-0ecb-4fb2-9ac6-64a09d8e92e5",
+      "name": "Catalunya Moto2™-Moto3™ Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2019-06-18",
+      "endDate": "2019-06-18",
+      "test": true
+    },
+    {
+      "id": "6d11d74c-a500-468e-9cb1-13707aad1b5e",
+      "name": "Brno MotoGP™ Test",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2019-08-05",
+      "endDate": "2019-08-05",
+      "test": true
+    },
+    {
+      "id": "8f5db766-746d-48e2-991b-5e2c48d8d80d",
+      "name": "Spielberg Moto2™-Moto3™ Test",
+      "circuit": "Red Bull Ring - Spielberg",
+      "country": "Austria",
+      "startDate": "2019-08-12",
+      "endDate": "2019-08-12",
+      "test": true
+    },
+    {
+      "id": "f86dbe0a-2673-4c89-aae2-5ca52bcd09c8",
+      "name": "Finland MotoGP™ Test",
+      "circuit": "KymiRing",
+      "country": "Finland",
+      "startDate": "2019-08-19",
+      "endDate": "2019-08-20",
+      "test": true
+    },
+    {
+      "id": "443982dc-5c33-4e23-b517-d5accd8d2c3e",
+      "name": "Misano MotoGP™ Test",
+      "circuit": "Misano World Circuit Marco Simoncelli",
+      "country": "Italy",
+      "startDate": "2019-08-29",
+      "endDate": "2019-08-30",
+      "test": true
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "2aa86226-3ce9-4e2c-8f4f-61c3064c2614",
+    "name": "Qatar MotoGP™ Official Test",
+    "circuit": "Lusail International Circuit",
+    "country": "Qatar",
+    "startDate": "2018-03-01",
+    "endDate": "2018-03-03",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

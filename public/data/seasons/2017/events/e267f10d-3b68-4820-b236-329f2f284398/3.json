@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "year": 2017,
+  "event": {
+    "id": "e267f10d-3b68-4820-b236-329f2f284398",
+    "name": "České Republiky MotoGP Official Test",
+    "circuit": "CREDITAS Autodrom Brno",
+    "country": "Czechia",
+    "startDate": "2017-08-07",
+    "endDate": "2017-08-07",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "66405811-f6d8-4355-9022-dea67c77a9da",
+      "type": "T",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2017-08-07T08:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

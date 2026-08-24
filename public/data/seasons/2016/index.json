@@ -1,0 +1,267 @@
+{
+  "schemaVersion": 1,
+  "year": 2016,
+  "seasonId": "ba354746-c4da-4dc8-8b8e-776fcc43287d",
+  "categories": [
+    {
+      "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+      "name": "MotoGP™",
+      "legacyId": 3
+    },
+    {
+      "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+      "name": "Moto2™",
+      "legacyId": 2
+    },
+    {
+      "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+      "name": "Moto3™",
+      "legacyId": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "040db5cc-c029-4756-ba07-10de7d987a27",
+      "name": "Commercial Bank Grand Prix of Qatar",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2016-03-17",
+      "endDate": "2016-03-20",
+      "test": false
+    },
+    {
+      "id": "6a3056f8-8043-4d37-a09a-2c0c1604f0c1",
+      "name": "Gran Premio Motul de la República Argentina",
+      "circuit": "Termas de Río Hondo",
+      "country": "Argentina",
+      "startDate": "2016-04-01",
+      "endDate": "2016-04-03",
+      "test": false
+    },
+    {
+      "id": "3ffbecf1-e77c-458c-b814-1ae7218c335e",
+      "name": "Red Bull Grand Prix of The Americas",
+      "circuit": "Circuit Of The Americas",
+      "country": "United States of America",
+      "startDate": "2016-04-08",
+      "endDate": "2016-04-10",
+      "test": false
+    },
+    {
+      "id": "37bfc7ba-59e4-4653-b3b6-8eeb332b8962",
+      "name": "Gran Premio Red Bull de España",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2016-04-22",
+      "endDate": "2016-04-24",
+      "test": false
+    },
+    {
+      "id": "0af4a3a6-99f5-4aaf-bffa-3ace311df40d",
+      "name": "Monster Energy Grand Prix de France",
+      "circuit": "Le Mans",
+      "country": "France",
+      "startDate": "2016-05-06",
+      "endDate": "2016-05-08",
+      "test": false
+    },
+    {
+      "id": "2bbee55f-fcfe-419b-86d1-79cbcde8dcb1",
+      "name": "Gran Premio d'Italia TIM",
+      "circuit": "Autodromo Internazionale del Mugello",
+      "country": "Italy",
+      "startDate": "2016-05-20",
+      "endDate": "2016-05-22",
+      "test": false
+    },
+    {
+      "id": "4e410e6b-75ef-4180-ad4b-87669009245c",
+      "name": "Gran Premi Monster Energy de Catalunya",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2016-06-03",
+      "endDate": "2016-06-05",
+      "test": false
+    },
+    {
+      "id": "fbb09e55-4344-4f18-b57b-b32c9df55d00",
+      "name": "Motul TT Assen",
+      "circuit": "TT Circuit Assen",
+      "country": "Netherlands",
+      "startDate": "2016-06-24",
+      "endDate": "2016-06-26",
+      "test": false
+    },
+    {
+      "id": "0da69b64-7c8e-4169-8837-690c2612a8b8",
+      "name": "GoPro Motorrad Grand Prix Deutschland",
+      "circuit": "Sachsenring",
+      "country": "Germany",
+      "startDate": "2016-07-15",
+      "endDate": "2016-07-17",
+      "test": false
+    },
+    {
+      "id": "7459991c-55bf-4fd3-aab1-c1087b0a3176",
+      "name": "NeroGiardini Motorrad Grand Prix von Österreich",
+      "circuit": "Red Bull Ring - Spielberg",
+      "country": "Austria",
+      "startDate": "2016-08-12",
+      "endDate": "2016-08-14",
+      "test": false
+    },
+    {
+      "id": "7c83d199-a632-4a39-95c2-55bd327b889b",
+      "name": "HJC Helmets Grand Prix České republiky",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2016-08-19",
+      "endDate": "2016-08-21",
+      "test": false
+    },
+    {
+      "id": "00a3ae01-6c18-4d92-ba15-b3a9bb89e660",
+      "name": "Octo British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "startDate": "2016-09-02",
+      "endDate": "2016-09-04",
+      "test": false
+    },
+    {
+      "id": "7d11eec3-716b-4f97-bbfc-efede9062468",
+      "name": "GP TIM di San Marino e della Riviera di Rimini",
+      "circuit": "Misano World Circuit Marco Simoncelli",
+      "country": "San Marino",
+      "startDate": "2016-09-09",
+      "endDate": "2016-09-11",
+      "test": false
+    },
+    {
+      "id": "bc236575-c3cb-48a2-ad29-8b65a5beab66",
+      "name": "Gran Premio Movistar de Aragón",
+      "circuit": "MotorLand Aragón",
+      "country": "Spain",
+      "startDate": "2016-09-23",
+      "endDate": "2016-09-25",
+      "test": false
+    },
+    {
+      "id": "8c54f8b0-7978-44b0-9188-d75ff33a12f5",
+      "name": "Motul Grand Prix of Japan",
+      "circuit": "Mobility Resort Motegi",
+      "country": "Japan",
+      "startDate": "2016-10-14",
+      "endDate": "2016-10-16",
+      "test": false
+    },
+    {
+      "id": "1a30e476-c9b4-44eb-86be-20eb78f18579",
+      "name": "Michelin® Australian Motorcycle Grand Prix",
+      "circuit": "Phillip Island",
+      "country": "Australia",
+      "startDate": "2016-10-21",
+      "endDate": "2016-10-23",
+      "test": false
+    },
+    {
+      "id": "b4f720a0-4f90-4bc3-94c7-9c5c7200d6e2",
+      "name": "Shell Malaysia Motorcycle Grand Prix",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2016-10-28",
+      "endDate": "2016-10-30",
+      "test": false
+    },
+    {
+      "id": "8bed2941-6b7c-4dae-9c18-7901834a3fe1",
+      "name": "Gran Premio Motul de la Comunitat Valenciana",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2016-11-11",
+      "endDate": "2016-11-13",
+      "test": false
+    },
+    {
+      "id": "5f856549-001d-4251-be52-43cc9c1eec53",
+      "name": "Valencia MotoGP™ Official Test",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2015-11-10",
+      "endDate": "2015-11-11",
+      "test": true
+    },
+    {
+      "id": "5bff7070-84a4-4c9e-9645-be27a6c338ad",
+      "name": "Sepang MotoGP™ Official Test",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2016-02-01",
+      "endDate": "2016-02-03",
+      "test": true
+    },
+    {
+      "id": "0b793687-de5b-427f-89e5-700df60fa9e8",
+      "name": "Phillip Island MotoGP™ Official Test",
+      "circuit": "Phillip Island",
+      "country": "Australia",
+      "startDate": "2016-02-17",
+      "endDate": "2016-02-19",
+      "test": true
+    },
+    {
+      "id": "bfd3ad8b-b717-43ac-ae81-cf292fb0bc2e",
+      "name": "Qatar MotoGP™ Official Test",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2016-03-02",
+      "endDate": "2016-03-04",
+      "test": true
+    },
+    {
+      "id": "f0ee70bd-230e-41f8-95ce-6ae97475e8d2",
+      "name": "Jerez Moto2™ - Moto3™ Official Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2016-03-02",
+      "endDate": "2016-03-04",
+      "test": true
+    },
+    {
+      "id": "796f6cb8-44a5-4997-8755-66fe59e43b27",
+      "name": "Qatar Moto2™ - Moto3™ Official Test",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2016-03-11",
+      "endDate": "2016-03-13",
+      "test": true
+    },
+    {
+      "id": "e4277872-38f1-4fc0-b431-32f51c848944",
+      "name": "Jerez MotoGP™ Official Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2016-04-25",
+      "endDate": "2016-04-25",
+      "test": true
+    },
+    {
+      "id": "c61ff800-1e85-4858-addf-a88ff2720309",
+      "name": "Catalunya MotoGP™ Official Test",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2016-06-06",
+      "endDate": "2016-06-06",
+      "test": true
+    },
+    {
+      "id": "7f72b560-223e-4603-bee9-58b4f21bb32b",
+      "name": "České republiky MotoGP Official Test",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2016-08-22",
+      "endDate": "2016-08-22",
+      "test": true
+    }
+  ]
+}

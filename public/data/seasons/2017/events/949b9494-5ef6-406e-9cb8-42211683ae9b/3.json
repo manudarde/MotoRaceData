@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "year": 2017,
+  "event": {
+    "id": "949b9494-5ef6-406e-9cb8-42211683ae9b",
+    "name": "Catalunya MotoGP™ Official Test",
+    "circuit": "Circuit de Barcelona-Catalunya",
+    "country": "Spain",
+    "startDate": "2017-06-12",
+    "endDate": "2017-06-12",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "a5ebcf81-1d45-4799-9207-ad91f6dcbcca",
+      "type": "T",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2017-06-12T08:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

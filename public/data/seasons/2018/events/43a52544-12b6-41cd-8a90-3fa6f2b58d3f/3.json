@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "43a52544-12b6-41cd-8a90-3fa6f2b58d3f",
+    "name": "Catalunya MotoGP™ Official Test",
+    "circuit": "Circuit de Barcelona-Catalunya",
+    "country": "Spain",
+    "startDate": "2018-06-18",
+    "endDate": "2018-06-18",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "37cd2b98-ca65-4b55-b9a0-430d23c2352f",
+      "type": "DAY",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2018-06-18T08:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

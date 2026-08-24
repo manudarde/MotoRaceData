@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "df476c9f-69d2-47c2-8306-f0cfaa3d8700",
+    "name": "Gran Premi Monster Energy de Catalunya",
+    "circuit": "Circuit de Barcelona-Catalunya",
+    "country": "Spain",
+    "startDate": "2018-06-15",
+    "endDate": "2018-06-17",
+    "test": false
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

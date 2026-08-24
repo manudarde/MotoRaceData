@@ -1,0 +1,52 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "443982dc-5c33-4e23-b517-d5accd8d2c3e",
+    "name": "Misano MotoGP™ Test",
+    "circuit": "Misano World Circuit Marco Simoncelli",
+    "country": "Italy",
+    "startDate": "2019-08-29",
+    "endDate": "2019-08-30",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "bc3df3ba-9003-46ee-9a0b-930ae6d48050",
+      "type": "FP",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2019-08-29T07:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "546547e5-3735-485c-9dcf-a5b4c151d820",
+      "type": "FP",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2019-08-29T12:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "b12cd27a-9920-435a-88f5-5ed3ea1ddea5",
+      "type": "FP",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2019-08-30T07:30:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "c4beebc7-a0ae-4413-b749-73596efda45c",
+      "type": "FP",
+      "number": 4,
+      "status": "FINISHED",
+      "date": "2019-08-30T12:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

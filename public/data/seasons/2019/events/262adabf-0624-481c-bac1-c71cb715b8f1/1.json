@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "262adabf-0624-481c-bac1-c71cb715b8f1",
+    "name": "Jerez Moto2™-Moto3™ Test 2",
+    "circuit": "Circuito de Jerez - Ángel Nieto",
+    "country": "Spain",
+    "startDate": "2019-05-07",
+    "endDate": "2019-05-07",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": [
+    {
+      "id": "84d3a79e-edba-4cea-afdb-e8a25d6a840c",
+      "type": "FP",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2019-05-07T08:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "ae74fdab-5238-4f14-907b-2e84b2709fc4",
+      "type": "FP",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2019-05-07T10:40:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "8258c619-5256-4312-9986-f878ff44ce69",
+      "type": "FP",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2019-05-07T13:20:00+00:00",
+      "classification": []
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2016,
+  "event": {
+    "id": "0b793687-de5b-427f-89e5-700df60fa9e8",
+    "name": "Phillip Island MotoGP™ Official Test",
+    "circuit": "Phillip Island",
+    "country": "Australia",
+    "startDate": "2016-02-17",
+    "endDate": "2016-02-19",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

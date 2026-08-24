@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "d293d4da-0992-4848-81eb-84c88aeb3d73",
+    "name": "Valencia MotoGP™ Official Test",
+    "circuit": "Circuit Ricardo Tormo",
+    "country": "Spain",
+    "startDate": "2017-11-14",
+    "endDate": "2017-11-15",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "1c3337ea-8391-438a-b9e0-335ed64b4885",
+      "type": "DAY",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2017-11-14T09:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "34da1863-9ee8-4b96-b67a-ed8f6c8764aa",
+      "type": "DAY",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2017-11-15T09:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

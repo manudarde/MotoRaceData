@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "year": 2017,
+  "event": {
+    "id": "f3f2566f-3299-4d28-9373-c5e2320f45f1",
+    "name": "Jerez Moto2™ - Moto3™ Official Test",
+    "circuit": "Circuito de Jerez - Ángel Nieto",
+    "country": "Spain",
+    "startDate": "2017-03-08",
+    "endDate": "2017-03-10",
+    "test": true
+  },
+  "category": {
+    "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+    "name": "Moto2™",
+    "legacyId": 2
+  },
+  "sessions": [
+    {
+      "id": "39808c50-bbdc-489d-826d-09be35433e66",
+      "type": "FP",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2017-03-08T09:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "f8256a8d-72ff-48bb-a3b5-528300949fb2",
+      "type": "FP",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2017-03-08T11:40:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "7588f509-008f-4eb6-a0a7-f5fd4c7510d5",
+      "type": "FP",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2017-03-08T14:20:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "d8d77fc5-5897-427c-a670-0cc8ba867928",
+      "type": "FP",
+      "number": 4,
+      "status": "FINISHED",
+      "date": "2017-03-09T10:20:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "dbf6219f-03c7-44a4-be5b-2ec4f0bc4c9b",
+      "type": "FP",
+      "number": 5,
+      "status": "FINISHED",
+      "date": "2017-03-09T13:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "5a73cdd4-7534-40a9-85d9-cb069a67f3ab",
+      "type": "FP",
+      "number": 6,
+      "status": "FINISHED",
+      "date": "2017-03-09T15:45:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "c6711be9-1807-45fa-a513-00d49d8e83d3",
+      "type": "FP",
+      "number": 7,
+      "status": "FINISHED",
+      "date": "2017-03-10T09:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "9dd4bcd0-5ad0-47c1-80df-22d4952303e7",
+      "type": "FP",
+      "number": 8,
+      "status": "FINISHED",
+      "date": "2017-03-10T11:40:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "0fd9588d-ba68-46bd-bcc9-d8709211b77e",
+      "type": "FP",
+      "number": 9,
+      "status": "FINISHED",
+      "date": "2017-03-10T14:20:00+00:00",
+      "classification": []
+    }
+  ]
+}

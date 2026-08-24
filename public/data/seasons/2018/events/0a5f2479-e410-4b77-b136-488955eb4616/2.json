@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "0a5f2479-e410-4b77-b136-488955eb4616",
+    "name": "Buriram MotoGP™ Official Test",
+    "circuit": "Chang International Circuit",
+    "country": "Thailand",
+    "startDate": "2018-02-16",
+    "endDate": "2018-02-18",
+    "test": true
+  },
+  "category": {
+    "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+    "name": "Moto2™",
+    "legacyId": 2
+  },
+  "sessions": []
+}

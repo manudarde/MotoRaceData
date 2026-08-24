@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "event": {
+    "id": "50617ca5-fa5c-47dc-934a-c60572cc390b",
+    "name": "Sepang MotoGP™ Official Test",
+    "circuit": "Petronas Sepang International Circuit",
+    "country": "Malaysia",
+    "startDate": "2018-01-28",
+    "endDate": "2018-01-30",
+    "test": true
+  },
+  "category": {
+    "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+    "name": "MotoGP™",
+    "legacyId": 3
+  },
+  "sessions": [
+    {
+      "id": "8b964df4-9b3b-4607-af18-ac1b88ebbb59",
+      "type": "DAY",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2018-01-28T02:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "2d103399-4c67-4d0d-89aa-a02277a8db2f",
+      "type": "DAY",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2018-01-29T02:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "cb8849f8-96fa-45c4-a697-228d6dcfcd4b",
+      "type": "DAY",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2018-01-30T02:00:00+00:00",
+      "classification": []
+    }
+  ]
+}

@@ -1,0 +1,285 @@
+{
+  "schemaVersion": 1,
+  "year": 2018,
+  "seasonId": "c0844c71-783c-4f86-abce-a9a67adcc1a9",
+  "categories": [
+    {
+      "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+      "name": "MotoGP™",
+      "legacyId": 3
+    },
+    {
+      "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+      "name": "Moto2™",
+      "legacyId": 2
+    },
+    {
+      "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+      "name": "Moto3™",
+      "legacyId": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "438cf2fe-d8f6-4843-b006-f59cb5d3fbeb",
+      "name": "Grand Prix of Qatar",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2018-03-16",
+      "endDate": "2018-03-18",
+      "test": false
+    },
+    {
+      "id": "3e523352-1ac0-4894-87f8-dcdf6d9feff2",
+      "name": "Gran Premio Motul de la República Argentina",
+      "circuit": "Termas de Río Hondo",
+      "country": "Argentina",
+      "startDate": "2018-04-06",
+      "endDate": "2018-04-08",
+      "test": false
+    },
+    {
+      "id": "5a37e3e4-d9c1-4172-b00f-6fbcc8be3eb2",
+      "name": "Red Bull Grand Prix of The Americas",
+      "circuit": "Circuit Of The Americas",
+      "country": "United States of America",
+      "startDate": "2018-04-20",
+      "endDate": "2018-04-22",
+      "test": false
+    },
+    {
+      "id": "25357dba-c2d4-40a8-b6af-27fcccbf5234",
+      "name": "Gran Premio Red Bull de España",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2018-05-04",
+      "endDate": "2018-05-06",
+      "test": false
+    },
+    {
+      "id": "d7e7a2e1-e4c0-48d8-9568-e06d4e43cca9",
+      "name": "HJC Helmets Grand Prix de France",
+      "circuit": "Le Mans",
+      "country": "France",
+      "startDate": "2018-05-18",
+      "endDate": "2018-05-20",
+      "test": false
+    },
+    {
+      "id": "dc79d677-9c2c-40dc-989d-894931877d8f",
+      "name": "Gran Premio d'Italia Oakley",
+      "circuit": "Autodromo Internazionale del Mugello",
+      "country": "Italy",
+      "startDate": "2018-06-01",
+      "endDate": "2018-06-03",
+      "test": false
+    },
+    {
+      "id": "df476c9f-69d2-47c2-8306-f0cfaa3d8700",
+      "name": "Gran Premi Monster Energy de Catalunya",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2018-06-15",
+      "endDate": "2018-06-17",
+      "test": false
+    },
+    {
+      "id": "f9f63d4b-866a-456e-8f2e-2b1c3b499862",
+      "name": "Motul TT Assen",
+      "circuit": "TT Circuit Assen",
+      "country": "Netherlands",
+      "startDate": "2018-06-29",
+      "endDate": "2018-07-01",
+      "test": false
+    },
+    {
+      "id": "1a8b3e63-f571-4d39-aa95-ee487aa4ddfb",
+      "name": "Pramac Motorrad Grand Prix Deutschland",
+      "circuit": "Sachsenring",
+      "country": "Germany",
+      "startDate": "2018-07-13",
+      "endDate": "2018-07-15",
+      "test": false
+    },
+    {
+      "id": "428d32b5-7bd9-4c83-b97b-355fb06338ba",
+      "name": "Monster Energy Grand Prix České republiky",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2018-08-03",
+      "endDate": "2018-08-05",
+      "test": false
+    },
+    {
+      "id": "7e31c4f7-5684-4a73-b93a-221043970582",
+      "name": "eyetime Motorrad Grand Prix von Österreich",
+      "circuit": "Red Bull Ring - Spielberg",
+      "country": "Austria",
+      "startDate": "2018-08-10",
+      "endDate": "2018-08-12",
+      "test": false
+    },
+    {
+      "id": "447c7454-2567-4fc0-bb28-98b3ec9c3f6e",
+      "name": "GoPro British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "startDate": "2018-08-24",
+      "endDate": "2018-08-26",
+      "test": false
+    },
+    {
+      "id": "0690a886-de7c-459b-b852-52556c864928",
+      "name": "GP Octo di San Marino e della Riviera di Rimini",
+      "circuit": "Misano World Circuit Marco Simoncelli",
+      "country": "San Marino",
+      "startDate": "2018-09-07",
+      "endDate": "2018-09-09",
+      "test": false
+    },
+    {
+      "id": "5dab9d77-3d03-4aa1-9806-b8309d00bed0",
+      "name": "Gran Premio Movistar de Aragón",
+      "circuit": "MotorLand Aragón",
+      "country": "Spain",
+      "startDate": "2018-09-21",
+      "endDate": "2018-09-23",
+      "test": false
+    },
+    {
+      "id": "eb97c1fb-fa29-4599-bb7a-4a12b81df2e0",
+      "name": "PTT Thailand Grand Prix",
+      "circuit": "Chang International Circuit",
+      "country": "Thailand",
+      "startDate": "2018-10-05",
+      "endDate": "2018-10-07",
+      "test": false
+    },
+    {
+      "id": "ce04a07b-fc3c-4722-8c76-d9cc83510bbb",
+      "name": "Motul Grand Prix of Japan",
+      "circuit": "Mobility Resort Motegi",
+      "country": "Japan",
+      "startDate": "2018-10-19",
+      "endDate": "2018-10-21",
+      "test": false
+    },
+    {
+      "id": "99b2d7ee-467c-4d61-b710-362adcfe1a64",
+      "name": "Michelin® Australian Motorcycle Grand Prix",
+      "circuit": "Phillip Island",
+      "country": "Australia",
+      "startDate": "2018-10-26",
+      "endDate": "2018-10-28",
+      "test": false
+    },
+    {
+      "id": "b8764fe0-6624-40fc-84ef-8cbceb06ec85",
+      "name": "Shell Malaysia Motorcycle Grand Prix",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2018-11-02",
+      "endDate": "2018-11-04",
+      "test": false
+    },
+    {
+      "id": "aa9ecafe-dcb8-4baa-b6fe-95dabadc9f18",
+      "name": "Gran Premio Motul de la Comunitat Valenciana",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2018-11-16",
+      "endDate": "2018-11-18",
+      "test": false
+    },
+    {
+      "id": "d293d4da-0992-4848-81eb-84c88aeb3d73",
+      "name": "Valencia MotoGP™ Official Test",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2017-11-14",
+      "endDate": "2017-11-15",
+      "test": true
+    },
+    {
+      "id": "50617ca5-fa5c-47dc-934a-c60572cc390b",
+      "name": "Sepang MotoGP™ Official Test",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2018-01-28",
+      "endDate": "2018-01-30",
+      "test": true
+    },
+    {
+      "id": "e1738dc5-531c-46ba-98e0-03cf40924180",
+      "name": "Valencia Moto2™ - Moto3™ Official Test",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2018-02-06",
+      "endDate": "2018-02-08",
+      "test": true
+    },
+    {
+      "id": "5893c0f0-c9c9-43a6-8e13-f4ef4c7d59cd",
+      "name": "Jerez Moto2™ - Moto3™ Official Test 1",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2018-02-12",
+      "endDate": "2018-02-14",
+      "test": true
+    },
+    {
+      "id": "0a5f2479-e410-4b77-b136-488955eb4616",
+      "name": "Buriram MotoGP™ Official Test",
+      "circuit": "Chang International Circuit",
+      "country": "Thailand",
+      "startDate": "2018-02-16",
+      "endDate": "2018-02-18",
+      "test": true
+    },
+    {
+      "id": "2aa86226-3ce9-4e2c-8f4f-61c3064c2614",
+      "name": "Qatar MotoGP™ Official Test",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2018-03-01",
+      "endDate": "2018-03-03",
+      "test": true
+    },
+    {
+      "id": "9de6064c-9529-4a03-81e2-e98b15ec1c49",
+      "name": "Jerez Moto2™ - Moto3™ Official Test 2",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2018-03-06",
+      "endDate": "2018-03-08",
+      "test": true
+    },
+    {
+      "id": "389d6695-5c9f-4e3c-aa44-abe4092dfe2b",
+      "name": "Jerez MotoGP™ Official Test",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2018-05-07",
+      "endDate": "2018-05-07",
+      "test": true
+    },
+    {
+      "id": "43a52544-12b6-41cd-8a90-3fa6f2b58d3f",
+      "name": "Catalunya MotoGP™ Official Test",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2018-06-18",
+      "endDate": "2018-06-18",
+      "test": true
+    },
+    {
+      "id": "d8775754-b53d-483f-8671-fb85d427d60f",
+      "name": "Czech Republic MotoGP™ Official Test",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2018-08-06",
+      "endDate": "2018-08-06",
+      "test": true
+    }
+  ]
+}

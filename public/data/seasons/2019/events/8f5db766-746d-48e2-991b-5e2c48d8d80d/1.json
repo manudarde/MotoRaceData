@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "8f5db766-746d-48e2-991b-5e2c48d8d80d",
+    "name": "Spielberg Moto2™-Moto3™ Test",
+    "circuit": "Red Bull Ring - Spielberg",
+    "country": "Austria",
+    "startDate": "2019-08-12",
+    "endDate": "2019-08-12",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": [
+    {
+      "id": "db59392b-8a14-41dc-a488-b0de29d1c82f",
+      "type": "FP",
+      "number": 1,
+      "status": "FINISHED",
+      "date": "2019-08-12T08:00:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "4f6db3fa-c880-46ce-b3d3-7621637d390e",
+      "type": "FP",
+      "number": 2,
+      "status": "FINISHED",
+      "date": "2019-08-12T10:40:00+00:00",
+      "classification": []
+    },
+    {
+      "id": "77f15b82-df55-4cd3-917a-c0ef39fdea1f",
+      "type": "FP",
+      "number": 3,
+      "status": "FINISHED",
+      "date": "2019-08-12T13:20:00+00:00",
+      "classification": []
+    }
+  ]
+}

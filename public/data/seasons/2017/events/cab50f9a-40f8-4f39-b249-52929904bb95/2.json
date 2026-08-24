@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2017,
+  "event": {
+    "id": "cab50f9a-40f8-4f39-b249-52929904bb95",
+    "name": "Phillip Island MotoGP™ Official Test",
+    "circuit": "Phillip Island",
+    "country": "Australia",
+    "startDate": "2017-02-15",
+    "endDate": "2017-02-17",
+    "test": true
+  },
+  "category": {
+    "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+    "name": "Moto2™",
+    "legacyId": 2
+  },
+  "sessions": []
+}

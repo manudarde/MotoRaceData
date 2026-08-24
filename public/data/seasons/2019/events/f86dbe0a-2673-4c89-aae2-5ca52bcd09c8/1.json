@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "year": 2019,
+  "event": {
+    "id": "f86dbe0a-2673-4c89-aae2-5ca52bcd09c8",
+    "name": "Finland MotoGP™ Test",
+    "circuit": "KymiRing",
+    "country": "Finland",
+    "startDate": "2019-08-19",
+    "endDate": "2019-08-20",
+    "test": true
+  },
+  "category": {
+    "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+    "name": "Moto3™",
+    "legacyId": 1
+  },
+  "sessions": []
+}

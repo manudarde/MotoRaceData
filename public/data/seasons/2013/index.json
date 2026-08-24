@@ -1,0 +1,186 @@
+{
+  "schemaVersion": 1,
+  "year": 2013,
+  "seasonId": "a0def534-ce1b-492c-bc46-e87e95d28230",
+  "categories": [
+    {
+      "id": "e8c110ad-64aa-4e8e-8a86-f2f152f6a942",
+      "name": "MotoGP™",
+      "legacyId": 3
+    },
+    {
+      "id": "549640b8-fd9c-4245-acfd-60e4bc38b25c",
+      "name": "Moto2™",
+      "legacyId": 2
+    },
+    {
+      "id": "954f7e65-2ef2-4423-b949-4961cc603e45",
+      "name": "Moto3™",
+      "legacyId": 1
+    }
+  ],
+  "events": [
+    {
+      "id": "e5c416e6-40f1-43f4-85a1-ae0486fb59e1",
+      "name": "Commercial Bank Grand Prix of Qatar",
+      "circuit": "Lusail International Circuit",
+      "country": "Qatar",
+      "startDate": "2013-04-04",
+      "endDate": "2013-04-07",
+      "test": false
+    },
+    {
+      "id": "7ea3451f-4b9f-4b1e-bb01-ff1ae5f0885f",
+      "name": "Red Bull Grand Prix of The Americas",
+      "circuit": "Circuit Of The Americas",
+      "country": "United States of America",
+      "startDate": "2013-04-19",
+      "endDate": "2013-04-21",
+      "test": false
+    },
+    {
+      "id": "414f83d5-f7fc-44a3-941b-010598a1a19e",
+      "name": "Gran Premio bwin de España",
+      "circuit": "Circuito de Jerez - Ángel Nieto",
+      "country": "Spain",
+      "startDate": "2013-05-03",
+      "endDate": "2013-05-05",
+      "test": false
+    },
+    {
+      "id": "191f0a25-b39e-4b6b-a0f3-e6aa7382e7cc",
+      "name": "Monster Energy Grand Prix de France",
+      "circuit": "Le Mans",
+      "country": "France",
+      "startDate": "2013-05-17",
+      "endDate": "2013-05-19",
+      "test": false
+    },
+    {
+      "id": "7e2529b7-a732-4351-bb0e-e1c58038843a",
+      "name": "Gran Premio d'Italia TIM",
+      "circuit": "Autodromo Internazionale del Mugello",
+      "country": "Italy",
+      "startDate": "2013-05-31",
+      "endDate": "2013-06-02",
+      "test": false
+    },
+    {
+      "id": "a420a80e-ec5d-48db-a25c-e23bed8a8064",
+      "name": "Gran Premi Aperol de Catalunya",
+      "circuit": "Circuit de Barcelona-Catalunya",
+      "country": "Spain",
+      "startDate": "2013-06-14",
+      "endDate": "2013-06-16",
+      "test": false
+    },
+    {
+      "id": "62c9d85f-846c-4b16-93f9-6857eea2f1cd",
+      "name": "Iveco TT Assen",
+      "circuit": "TT Circuit Assen",
+      "country": "Netherlands",
+      "startDate": "2013-06-27",
+      "endDate": "2013-06-29",
+      "test": false
+    },
+    {
+      "id": "de11fa5b-feca-49b6-9d19-24702a21b2ab",
+      "name": "eni Motorrad Grand Prix Deutschland",
+      "circuit": "Sachsenring",
+      "country": "Germany",
+      "startDate": "2013-07-12",
+      "endDate": "2013-07-14",
+      "test": false
+    },
+    {
+      "id": "094709e4-31f8-45dc-bfe6-324788bb345f",
+      "name": "Red Bull U.S. Grand Prix",
+      "circuit": "Mazda Raceway",
+      "country": "United States of America",
+      "startDate": "2013-07-19",
+      "endDate": "2013-07-21",
+      "test": false
+    },
+    {
+      "id": "2ba0a08e-3b9f-400f-8513-6def050bf14a",
+      "name": "Red Bull Indianapolis Grand Prix",
+      "circuit": "Indianapolis Motor Speedway",
+      "country": "United States of America",
+      "startDate": "2013-08-16",
+      "endDate": "2013-08-18",
+      "test": false
+    },
+    {
+      "id": "3198d637-b762-4f8d-a67d-bc52fd4127c8",
+      "name": "bwin Grand Prix České republiky",
+      "circuit": "CREDITAS Autodrom Brno",
+      "country": "Czechia",
+      "startDate": "2013-08-23",
+      "endDate": "2013-08-25",
+      "test": false
+    },
+    {
+      "id": "9b726286-adcb-47ff-8a7e-bc53cc6fbfcb",
+      "name": "Hertz British Grand Prix",
+      "circuit": "Silverstone Circuit",
+      "country": "United Kingdom of Great Britain and Northern Ireland",
+      "startDate": "2013-08-30",
+      "endDate": "2013-09-01",
+      "test": false
+    },
+    {
+      "id": "6b0b74e4-ca8e-4d38-8806-d0e331421c1f",
+      "name": "GP Aperol di San Marino e Riviera di Rimini",
+      "circuit": "Misano World Circuit Marco Simoncelli",
+      "country": "San Marino",
+      "startDate": "2013-09-13",
+      "endDate": "2013-09-15",
+      "test": false
+    },
+    {
+      "id": "6bc77901-194d-4075-b96c-354797987fb1",
+      "name": "Gran Premio Iveco de Aragón",
+      "circuit": "MotorLand Aragón",
+      "country": "Spain",
+      "startDate": "2013-09-27",
+      "endDate": "2013-09-29",
+      "test": false
+    },
+    {
+      "id": "53c09084-725d-47c5-91dc-d488760d2c20",
+      "name": "Shell Advance Malaysian Motorcycle GP",
+      "circuit": "Petronas Sepang International Circuit",
+      "country": "Malaysia",
+      "startDate": "2013-10-11",
+      "endDate": "2013-10-13",
+      "test": false
+    },
+    {
+      "id": "265bbb13-e15c-4be5-9254-e62df872b60a",
+      "name": "Tissot Australian Grand Prix",
+      "circuit": "Phillip Island",
+      "country": "Australia",
+      "startDate": "2013-10-18",
+      "endDate": "2013-10-20",
+      "test": false
+    },
+    {
+      "id": "4f97088a-79c9-492a-a934-a570035ffbe4",
+      "name": "AirAsia Grand Prix of Japan",
+      "circuit": "Mobility Resort Motegi",
+      "country": "Japan",
+      "startDate": "2013-10-25",
+      "endDate": "2013-10-27",
+      "test": false
+    },
+    {
+      "id": "6bad463a-bd6b-43ad-a986-fdcc96838f63",
+      "name": "GP Generali de la Comunitat Valenciana",
+      "circuit": "Circuit Ricardo Tormo",
+      "country": "Spain",
+      "startDate": "2013-11-08",
+      "endDate": "2013-11-10",
+      "test": false
+    }
+  ]
+}
