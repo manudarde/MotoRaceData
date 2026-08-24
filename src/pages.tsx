@@ -2954,16 +2954,16 @@ function PerformanceTable({ rows }: { rows: PerformanceRow[] }) {
 }
 
 function ConstructorStatistics({ entries }: { entries: PointEntry[] }) {
-  const [group, setGroup] = useState('constructor')
+  const [group, setGroup] = useState('bike')
   const rows = groupedStatistics(entries, group === 'team' ? 'team' : 'bike')
   return (
     <>
       <PageHeader
-        title="Constructor & Team Statistics"
+        title="Bike & Team Statistics"
         description="Compare scoring, victories, podiums and rider contributions for the selected season."
       />
       <BaseFilters />
-      <Tabs value={group} set={setGroup} values={['constructor', 'team']} />
+      <Tabs value={group} set={setGroup} values={['bike', 'team']} />
       <DataTable
         rows={rows}
         rowKey={(row) => row.name}
@@ -2976,7 +2976,7 @@ function ConstructorStatistics({ entries }: { entries: PointEntry[] }) {
           },
           {
             key: 'name',
-            label: group === 'team' ? 'Team' : 'Constructor',
+            label: group === 'team' ? 'Team' : 'Bike',
             value: (row) => <strong>{row.name}</strong>,
             sort: (row) => row.name,
           },
@@ -3057,13 +3057,14 @@ export function StatisticsPage() {
       ? 'by rider'
       : requestedScope === 'by-circuit'
         ? 'by circuit'
-        : requestedScope === 'by-constructor'
-          ? 'by constructor'
+        : requestedScope === 'by-constructor' ||
+            requestedScope === 'by-bike-and-team'
+          ? 'by bike and team'
           : 'by year'
   const setScope = (nextScope: string) => {
     const next = new URLSearchParams(params)
     if (nextScope === 'by year') next.delete('scope')
-    else next.set('scope', nextScope.replace(' ', '-'))
+    else next.set('scope', nextScope.replaceAll(' ', '-'))
     setParams(next)
   }
   const [yearView, setYearView] = useState('details')
@@ -3176,7 +3177,7 @@ export function StatisticsPage() {
         <Tabs
           value={scope}
           set={setScope}
-          values={['by year', 'by rider', 'by circuit', 'by constructor']}
+          values={['by year', 'by rider', 'by circuit', 'by bike and team']}
         />
         <RiderStatisticsView />
       </>
@@ -3187,18 +3188,18 @@ export function StatisticsPage() {
         <Tabs
           value={scope}
           set={setScope}
-          values={['by year', 'by rider', 'by circuit', 'by constructor']}
+          values={['by year', 'by rider', 'by circuit', 'by bike and team']}
         />
         <CircuitPage />
       </>
     )
-  if (scope === 'by constructor')
+  if (scope === 'by bike and team')
     return (
       <>
         <Tabs
           value={scope}
           set={setScope}
-          values={['by year', 'by rider', 'by circuit', 'by constructor']}
+          values={['by year', 'by rider', 'by circuit', 'by bike and team']}
         />
         <ConstructorStatistics entries={entries} />
       </>
@@ -3208,7 +3209,7 @@ export function StatisticsPage() {
       <Tabs
         value={scope}
         set={setScope}
-        values={['by year', 'by rider', 'by circuit', 'by constructor']}
+        values={['by year', 'by rider', 'by circuit', 'by bike and team']}
       />
       <PageHeader
         title="Statistics by Year"
@@ -3998,7 +3999,8 @@ export function AboutPage() {
             <p>
               Follow MotoGP, Moto2 and Moto3 seasons, compare riders and teams,
               inspect event-by-event points, and see how championship positions
-              develop from one circuit to the next.
+              develop from one circuit to the next, with historical data
+              available from 2012 onward.
             </p>
           </section>
           <section>
