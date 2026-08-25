@@ -359,7 +359,7 @@ export function ResultsByRacePage() {
         title="Detailed results"
         description="Full classification for every available race-weekend session."
       />
-      <BaseFilters event />
+      <BaseFilters event eventAsCircuit />
       <div className="filters subfilters">
         <Select
           label="Session"
@@ -570,7 +570,7 @@ export function ResultsSummaryByRacePage() {
         title="Results – Race Summary"
         description="Sprint and race finishing positions for every rider at the selected event."
       />
-      <BaseFilters event />
+      <BaseFilters event eventAsCircuit />
       <div className="summary-actions">
         <button
           type="button"
@@ -754,6 +754,9 @@ function usePoints() {
 export function ResultsByYearPage() {
   const { query, entries, category } = usePoints()
   const { riders, events } = riderEventPositions(entries)
+  const circuitByEvent = new Map(
+    query.data?.events.map((event) => [event.id, event.circuit]) ?? [],
+  )
   const sessions =
     category === 3 ? (['sprint', 'race'] as const) : (['race'] as const)
   const rows = riders.map((rider) => ({
@@ -808,7 +811,7 @@ export function ResultsByYearPage() {
                       colSpan={sessions.length}
                       key={event.id}
                     >
-                      {event.name}
+                      {circuitByEvent.get(event.id) ?? event.name}
                       <small>{formatDate(event.date, false)}</small>
                     </th>
                   ))}
@@ -1382,7 +1385,7 @@ export function StandingsPage() {
           .reduce((sum, entry) => sum + entry.points, 0)
         return trendRow
       },
-      { event: event.name },
+      { circuit: event.circuit },
     )
   })
   const finalTrendPoint = trend.at(-1)
@@ -1494,7 +1497,7 @@ export function StandingsPage() {
                   >
                     <CartesianGrid strokeDasharray="3 3" />
                     <XAxis
-                      dataKey="event"
+                      dataKey="circuit"
                       interval={0}
                       angle={-35}
                       textAnchor="end"
@@ -1534,7 +1537,7 @@ export function StandingsPage() {
                       selectedNames.map((name, index) => (
                         <ReferenceDot
                           key={`label-${name}`}
-                          x={finalTrendPoint.event}
+                          x={finalTrendPoint.circuit}
                           y={Number(finalTrendPoint[name])}
                           r={0}
                           label={{
@@ -3607,11 +3610,23 @@ type CircuitColumn = {
   key: string
   year: number
   eventName: string
+  startDate: string | null
+  endDate: string | null
+  upcoming: boolean
   session?: Session
 }
 
-function circuitSession(bundle: EventBundle, kind: CircuitSessionKind) {
-  const sessions = bundle.sessions ?? []
+function circuitWeekend(startDate: string | null, endDate: string | null) {
+  if (!startDate) return 'Date unavailable'
+  if (!endDate || endDate === startDate) return formatDate(startDate)
+  return `${formatDate(startDate, false)} – ${formatDate(endDate)}`
+}
+
+function circuitSession(
+  bundle: EventBundle | undefined,
+  kind: CircuitSessionKind,
+) {
+  const sessions = bundle?.sessions ?? []
   if (kind === 'Q2')
     return sessions.find(
       (session) =>
@@ -3655,6 +3670,13 @@ function CircuitSessionTable({
                   <th key={column.key}>
                     <strong>{column.year}</strong>
                     <small>{column.eventName}</small>
+                    {column.upcoming && (
+                      <small className="circuit-upcoming">Upcoming</small>
+                    )}
+                    <small className="circuit-weekend">
+                      Race weekend:{' '}
+                      {circuitWeekend(column.startDate, column.endDate)}
+                    </small>
                   </th>
                 ))}
               </tr>
@@ -3709,10 +3731,114 @@ function CircuitSessionTable({
   )
 }
 
+const circuitCategories = [
+  { id: 1, name: 'Moto3' },
+  { id: 2, name: 'Moto2' },
+  { id: 3, name: 'MotoGP' },
+] as const
+
+type CircuitSummaryRow = {
+  key: string
+  year: number
+  eventName: string
+  startDate: string | null
+  endDate: string | null
+  upcoming: boolean
+  bundles: Map<number, EventBundle>
+}
+
+function CircuitPodium({ session }: { session?: Session }) {
+  const podium = session?.classification
+    .filter((result) => result.position !== null && result.position <= 3)
+    .sort((a, b) => (a.position ?? 99) - (b.position ?? 99))
+  if (!podium?.length) return <span className="circuit-no-podium">—</span>
+  return (
+    <ol className="circuit-podium">
+      {podium.map((result) => (
+        <li key={`${result.position}-${result.riderName}`}>
+          <span>{result.position}</span>
+          <strong>{result.riderName}</strong>
+          <small>{result.constructorName}</small>
+        </li>
+      ))}
+    </ol>
+  )
+}
+
+function CircuitSummaryTable({
+  title,
+  rows,
+}: {
+  title: CircuitSessionKind
+  rows: CircuitSummaryRow[]
+}) {
+  const categories =
+    title === 'Sprint'
+      ? circuitCategories.filter((category) => category.id === 3)
+      : circuitCategories
+  return (
+    <section className="circuit-session">
+      <div className="section-heading">
+        <p className="eyebrow">Podium by category</p>
+        <h2>{title}</h2>
+      </div>
+      <div className="table-wrap circuit-summary-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Event</th>
+              {categories.map((category) => (
+                <th key={category.id}>{category.name}</th>
+              ))}
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.key}>
+                <th scope="row">
+                  <strong>{row.year}</strong>
+                  <small>{row.eventName}</small>
+                  {row.upcoming && (
+                    <small className="circuit-upcoming">Upcoming</small>
+                  )}
+                  <small className="circuit-weekend">
+                    Race weekend: {circuitWeekend(row.startDate, row.endDate)}
+                  </small>
+                </th>
+                {categories.map((category) => (
+                  <td key={category.id}>
+                    <CircuitPodium
+                      session={circuitSession(
+                        row.bundles.get(category.id),
+                        title,
+                      )}
+                    />
+                  </td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )
+}
+
 export function CircuitPage() {
   const manifest = useManifest()
   const years = (manifest.data?.seasons ?? []).map((season) => season.year)
   const seasonQueries = useSeasons(years)
+  const currentSeasonIndex = years.indexOf(manifest.data?.currentSeason ?? -1)
+  const currentSeasonEvents =
+    seasonQueries[currentSeasonIndex]?.data?.events.filter(
+      (event) => !event.test,
+    ) ?? []
+  const weekendByCircuit = new Map(
+    currentSeasonEvents.map((event) => [
+      event.circuit,
+      event.startDate ?? event.endDate ?? '',
+    ]),
+  )
   const circuits = [
     ...new Set(
       seasonQueries
@@ -3724,12 +3850,24 @@ export function CircuitPage() {
         )
         .filter(Boolean),
     ),
-  ].sort((a, b) => a.localeCompare(b))
+  ].sort((a, b) => {
+    const aWeekend = weekendByCircuit.get(a)
+    const bWeekend = weekendByCircuit.get(b)
+    if (aWeekend && bWeekend)
+      return aWeekend.localeCompare(bWeekend) || a.localeCompare(b)
+    if (aWeekend) return -1
+    if (bWeekend) return 1
+    return a.localeCompare(b)
+  })
   const [selectedCircuit, setSelectedCircuit] = useState('')
   const [category, setCategory] = useState(3)
+  const [circuitSessionFilter, setCircuitSessionFilter] =
+    useState<CircuitSessionKind>('Race')
+  const [summarySessionFilter, setSummarySessionFilter] =
+    useState<CircuitSessionKind>('Race')
+  const [showOnlyCurrentRiders, setShowOnlyCurrentRiders] = useState(false)
   const [newestFirst, setNewestFirst] = useState(true)
-  const [circuitView, setCircuitView] = useState('results')
-  const currentSeasonIndex = years.indexOf(manifest.data?.currentSeason ?? -1)
+  const [circuitView, setCircuitView] = useState('detailed results')
   const today = new Date().toISOString().slice(0, 10)
   const nextEvent = seasonQueries[currentSeasonIndex]?.data?.events
     .filter(
@@ -3748,28 +3886,65 @@ export function CircuitPage() {
     (year, index) =>
       seasonQueries[index]?.data?.events
         .filter((event) => !event.test && event.circuit === circuit)
-        .map((event) => ({ year, eventId: event.id, eventName: event.name })) ??
-      [],
+        .map((event) => ({
+          year,
+          eventId: event.id,
+          eventName: event.name,
+          startDate: event.startDate,
+          endDate: event.endDate,
+          upcoming: Boolean(event.startDate && event.startDate >= today),
+        })) ?? [],
   )
   const bundleQueries = useCircuitEventBundles(eventRefs, category)
+  const currentSeasonBundle = useRaceBundle(
+    manifest.data?.currentSeason,
+    category,
+  )
+  const summaryBundleQueries = useCircuitEventBundles(
+    circuitView === 'summary results' ? eventRefs : [],
+    1,
+  )
+  const summaryMoto2Queries = useCircuitEventBundles(
+    circuitView === 'summary results' ? eventRefs : [],
+    2,
+  )
+  const summaryMotoGpQueries = useCircuitEventBundles(
+    circuitView === 'summary results' ? eventRefs : [],
+    3,
+  )
   const columns = eventRefs
     .map((event, index) => ({
       key: `${event.year}-${event.eventId}`,
       year: event.year,
       eventName: event.eventName,
+      startDate: event.startDate,
+      endDate: event.endDate,
+      upcoming: event.upcoming,
       bundle: bundleQueries[index]?.data,
     }))
-    .filter((column): column is typeof column & { bundle: EventBundle } =>
-      Boolean(column.bundle),
-    )
     .sort((a, b) => (newestFirst ? b.year - a.year : a.year - b.year))
   const makeColumns = (kind: CircuitSessionKind): CircuitColumn[] =>
     columns.map((column) => ({
       key: column.key,
       year: column.year,
       eventName: column.eventName,
+      startDate: column.startDate,
+      endDate: column.endDate,
+      upcoming: column.upcoming,
       session: circuitSession(column.bundle, kind),
     }))
+  const summaryRows = eventRefs
+    .map((event, index) => {
+      const bundles = new Map<number, EventBundle>()
+      const moto3 = summaryBundleQueries[index]?.data
+      const moto2 = summaryMoto2Queries[index]?.data
+      const motoGp = summaryMotoGpQueries[index]?.data
+      if (moto3) bundles.set(1, moto3)
+      if (moto2) bundles.set(2, moto2)
+      if (motoGp) bundles.set(3, motoGp)
+      return { ...event, key: `${event.year}-${event.eventId}`, bundles }
+    })
+    .sort((a, b) => (newestFirst ? b.year - a.year : a.year - b.year))
   const specialistRows = [
     ...new Set(
       columns.flatMap(
@@ -3791,6 +3966,11 @@ export function CircuitPage() {
         result.position === null ? [] : [result.position],
       )
       const wins = finishes.filter((position) => position === 1).length
+      const poles = columns.filter((column) =>
+        circuitSession(column.bundle, 'Q2')?.classification.some(
+          (result) => result.riderName === rider && result.position === 1,
+        ),
+      ).length
       const podiums = finishes.filter((position) => position <= 3).length
       const points = finishes.reduce(
         (sum, position) => sum + racePoints(position),
@@ -3800,6 +3980,7 @@ export function CircuitPage() {
         rider,
         starts: results.length,
         wins,
+        poles,
         podiums,
         average: finishes.length
           ? finishes.reduce((sum, position) => sum + position, 0) /
@@ -3812,14 +3993,37 @@ export function CircuitPage() {
     .sort(
       (a, b) => b.wins - a.wins || b.podiums - a.podiums || b.points - a.points,
     )
+  const currentRiders = new Set(
+    currentSeasonBundle.data?.events.flatMap((event) =>
+      event.sessions.flatMap((session) =>
+        session.classification.map((result) => result.riderName),
+      ),
+    ) ?? [],
+  )
+  const visibleSpecialistRows = showOnlyCurrentRiders
+    ? specialistRows.filter((row) => currentRiders.has(row.rider))
+    : specialistRows
   const loading =
     manifest.isLoading ||
     seasonQueries.some((query) => query.isLoading) ||
-    bundleQueries.some((query) => query.isLoading)
+    (circuitView === 'summary results'
+      ? [
+          ...summaryBundleQueries,
+          ...summaryMoto2Queries,
+          ...summaryMotoGpQueries,
+        ].some((query) => query.isLoading)
+      : bundleQueries.some((query) => query.isLoading) ||
+        (circuitView === 'rider rankings' && currentSeasonBundle.isLoading))
   const error =
     manifest.error ??
     seasonQueries.find((query) => query.error)?.error ??
-    bundleQueries.find((query) => query.error)?.error
+    (circuitView === 'summary results'
+      ? [
+          ...summaryBundleQueries,
+          ...summaryMoto2Queries,
+          ...summaryMotoGpQueries,
+        ].find((query) => query.error)?.error
+      : bundleQueries.find((query) => query.error)?.error)
   return (
     <>
       <PageHeader
@@ -3834,15 +4038,43 @@ export function CircuitPage() {
             </option>
           ))}
         </Select>
-        <Select
-          label="Category"
-          value={category}
-          onChange={(value) => setCategory(Number(value))}
-        >
-          <option value={3}>MotoGP</option>
-          <option value={2}>Moto2</option>
-          <option value={1}>Moto3</option>
-        </Select>
+        {circuitView !== 'summary results' && (
+          <Select
+            label="Category"
+            value={category}
+            onChange={(value) => setCategory(Number(value))}
+          >
+            <option value={3}>MotoGP</option>
+            <option value={2}>Moto2</option>
+            <option value={1}>Moto3</option>
+          </Select>
+        )}
+        {circuitView === 'detailed results' && (
+          <Select
+            label="Session"
+            value={circuitSessionFilter}
+            onChange={(value) =>
+              setCircuitSessionFilter(value as CircuitSessionKind)
+            }
+          >
+            <option value="Q2">Q2</option>
+            <option value="Sprint">Sprint</option>
+            <option value="Race">Race</option>
+          </Select>
+        )}
+        {circuitView === 'summary results' && (
+          <Select
+            label="Session"
+            value={summarySessionFilter}
+            onChange={(value) =>
+              setSummarySessionFilter(value as CircuitSessionKind)
+            }
+          >
+            <option value="Q2">Q2</option>
+            <option value="Sprint">Sprint</option>
+            <option value="Race">Race</option>
+          </Select>
+        )}
         <button
           className="column-order"
           type="button"
@@ -3854,20 +4086,29 @@ export function CircuitPage() {
       <Tabs
         value={circuitView}
         set={setCircuitView}
-        values={['results', 'rider rankings']}
+        values={['detailed results', 'summary results', 'rider rankings']}
       />
       <DataGate loading={loading} error={error}>
-        {columns.length ? (
-          circuitView === 'results' ? (
+        {circuitView === 'summary results' ? (
+          summaryRows.length ? (
             <div className="circuit-results">
-              <CircuitSessionTable title="Race" columns={makeColumns('Race')} />
-              {category === 3 && (
-                <CircuitSessionTable
-                  title="Sprint"
-                  columns={makeColumns('Sprint')}
-                />
-              )}
-              <CircuitSessionTable title="Q2" columns={makeColumns('Q2')} />
+              <CircuitSummaryTable
+                title={summarySessionFilter}
+                rows={summaryRows}
+              />
+            </div>
+          ) : (
+            <Empty>
+              No historical events are available for this selection.
+            </Empty>
+          )
+        ) : columns.length ? (
+          circuitView === 'detailed results' ? (
+            <div className="circuit-results">
+              <CircuitSessionTable
+                title={circuitSessionFilter}
+                columns={makeColumns(circuitSessionFilter)}
+              />
             </div>
           ) : (
             <>
@@ -3875,8 +4116,20 @@ export function CircuitPage() {
                 <p className="eyebrow">Circuit specialists</p>
                 <h2>Rider Rankings</h2>
               </div>
+              <div className="summary-actions">
+                <button
+                  type="button"
+                  className={showOnlyCurrentRiders ? 'active' : ''}
+                  aria-pressed={showOnlyCurrentRiders}
+                  onClick={() =>
+                    setShowOnlyCurrentRiders((current) => !current)
+                  }
+                >
+                  Show only current riders
+                </button>
+              </div>
               <DataTable
-                rows={specialistRows}
+                rows={visibleSpecialistRows}
                 rowKey={(row) => row.rider}
                 columns={[
                   {
@@ -3897,6 +4150,13 @@ export function CircuitPage() {
                     label: 'Wins',
                     value: (row) => row.wins,
                     sort: (row) => row.wins,
+                    align: 'right',
+                  },
+                  {
+                    key: 'poles',
+                    label: 'Pole',
+                    value: (row) => row.poles,
+                    sort: (row) => row.poles,
                     align: 'right',
                   },
                   {
@@ -4039,17 +4299,28 @@ export function AboutPage() {
             <h2>Help make MotoRaceData better.</h2>
             <p>
               If you notice incorrect data, find a bug or have an idea for a
-              useful statistic, open an issue on GitHub.
+              useful statistic, open an issue on GitHub or follow me on
+              Instagram.
             </p>
           </div>
-          <a
-            className="about-button"
-            href="https://github.com/manudarde/MotoRaceData/issues"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Open GitHub issues
-          </a>
+          <div className="about-actions">
+            <a
+              className="about-button"
+              href="https://www.instagram.com/motoracedata?utm_source=qr"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Follow me on Instagram
+            </a>
+            <a
+              className="about-button"
+              href="https://github.com/manudarde/MotoRaceData/issues"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open GitHub issues
+            </a>
+          </div>
         </section>
         <p className="about-legal">
           © 2026 MotoRaceData. MotoGP, Moto2 and Moto3 are trademarks of their
