@@ -49,6 +49,7 @@ import type {
   EventBundle,
   PointEntry,
   RaceBundle,
+  RaceEvent,
   Result,
   Session,
   Standing,
@@ -1390,14 +1391,14 @@ export function StandingsPage() {
   })
   const finalTrendPoint = trend.at(-1)
   const chartColors = [
-    '#ff4d3d',
-    '#4f9cff',
-    '#ffc857',
-    '#50c878',
-    '#a875ff',
-    '#20b8cd',
-    '#ff7ab6',
-    '#8ea34a',
+    '#d85b50',
+    '#4f86c6',
+    '#d5a93f',
+    '#4fa46e',
+    '#8b6bb7',
+    '#cf7845',
+    '#45a6a1',
+    '#b06d91',
   ]
   const selectFromRace = (eventId: string) => {
     setFromRace(eventId)
@@ -1875,18 +1876,19 @@ export function PointsByYearPage() {
 function RiderStatisticsView() {
   const manifest = useManifest()
   const trendColors = [
-    '#ff4d3d',
-    '#4f9cff',
-    '#ffc857',
-    '#50c878',
-    '#a875ff',
-    '#ff8c42',
-    '#36cfc9',
+    '#d85b50',
+    '#4f86c6',
+    '#d5a93f',
+    '#4fa46e',
+    '#8b6bb7',
+    '#cf7845',
+    '#45a6a1',
   ]
   const years = manifest.data?.seasons.map((season) => season.year) ?? []
   const raceQueries = useRaceBundles(years, [3, 2, 1])
   const [riderSearch, setRiderSearch] = useState('')
-  const [trendCategory, setTrendCategory] = useState('MotoGP')
+  const [trendCategory, setTrendCategory] = useState('All')
+  const [includeTrendSprints, setIncludeTrendSprints] = useState(true)
   const datasets = raceQueries.flatMap((raceQuery) =>
     raceQuery.data
       ? [{ bundle: raceQuery.data, entries: pointEntries(raceQuery.data) }]
@@ -2039,7 +2041,10 @@ function RiderStatisticsView() {
   const pointsTrendSeries = [...years]
     .sort((a, b) => a - b)
     .flatMap((year) => {
-      const selectedCategoryIds = trendCategory === 'MotoGP' ? [3] : [2, 1]
+      const selectedCategoryIds =
+        trendCategory === 'All'
+          ? [3, 2, 1]
+          : [trendCategory === 'MotoGP' ? 3 : trendCategory === 'Moto2' ? 2 : 1]
       const seasonDatasets = datasets.filter(
         ({ bundle, entries: bundleEntries }) =>
           bundle.year === year &&
@@ -2054,7 +2059,9 @@ function RiderStatisticsView() {
             date: event.startDate ?? event.endDate ?? '',
             riderEntries: bundleEntries.filter(
               (entry) =>
-                entry.riderName === selectedRider && entry.eventId === event.id,
+                entry.riderName === selectedRider &&
+                entry.eventId === event.id &&
+                (includeTrendSprints || entry.isRace),
             ),
           })),
         )
@@ -2200,26 +2207,24 @@ function RiderStatisticsView() {
       const categoryDatasets = datasets.filter(
         ({ bundle }) => bundle.category.name.replace('™', '') === category,
       )
-      const names = [
-        ...new Set(
-          categoryDatasets.flatMap(({ entries: bundleEntries }) => {
-            const riderRows = bundleEntries.filter(
-              (entry) => entry.isRace && entry.riderName === selectedRider,
-            )
-            const teams = new Set(riderRows.map((entry) => entry.teamName))
-            return bundleEntries
+      return categoryDatasets.flatMap(({ bundle, entries: bundleEntries }) => {
+        const riderRows = bundleEntries.filter(
+          (entry) => entry.isRace && entry.riderName === selectedRider,
+        )
+        const teams = new Set(riderRows.map((entry) => entry.teamName))
+        const names = [
+          ...new Set(
+            bundleEntries
               .filter(
                 (entry) =>
                   entry.isRace &&
                   entry.riderName !== selectedRider &&
                   teams.has(entry.teamName),
               )
-              .map((entry) => entry.riderName)
-          }),
-        ),
-      ].sort((a, b) => a.localeCompare(b))
-      return names.flatMap((teammate) => {
-        const pairs = categoryDatasets.flatMap(({ entries: bundleEntries }) => {
+              .map((entry) => entry.riderName),
+          ),
+        ].sort((a, b) => a.localeCompare(b))
+        return names.flatMap((teammate) => {
           const riderByEvent = new Map(
             bundleEntries
               .filter(
@@ -2227,7 +2232,7 @@ function RiderStatisticsView() {
               )
               .map((entry) => [entry.eventId, entry]),
           )
-          return bundleEntries
+          const pairs = bundleEntries
             .filter((entry) => entry.isRace && entry.riderName === teammate)
             .flatMap((other) => {
               const rider = riderByEvent.get(other.eventId)
@@ -2235,8 +2240,10 @@ function RiderStatisticsView() {
                 ? [{ rider, other }]
                 : []
             })
+          return pairs.length
+            ? [{ category, teammate, year: bundle.year, pairs }]
+            : []
         })
-        return pairs.length ? [{ category, teammate, pairs }] : []
       })
     },
   )
@@ -2386,15 +2393,36 @@ function RiderStatisticsView() {
             <div className="chart-card">
               <div className="chart-toolbar">
                 <h2>Championship trend</h2>
-                <Tabs
-                  value={trendCategory}
-                  set={setTrendCategory}
-                  values={['MotoGP', 'Moto2 and Moto3']}
-                />
+                <div className="trend-filter-group">
+                  <Select
+                    label="Category"
+                    value={trendCategory}
+                    onChange={setTrendCategory}
+                  >
+                    {['All', 'Moto3', 'Moto2', 'MotoGP'].map((category) => (
+                      <option key={category} value={category}>
+                        {category}
+                      </option>
+                    ))}
+                  </Select>
+                  <label className="switch-field">
+                    <span>Include sprints</span>
+                    <input
+                      type="checkbox"
+                      role="switch"
+                      checked={includeTrendSprints}
+                      onChange={(event) =>
+                        setIncludeTrendSprints(event.target.checked)
+                      }
+                    />
+                    <i aria-hidden="true" />
+                  </label>
+                </div>
               </div>
               {pointsTrendData.length ? (
                 <ResponsiveContainer width="100%" height={780}>
                   <LineChart
+                    key={`${trendCategory}-${includeTrendSprints ? 'with-sprints' : 'races-only'}`}
                     data={pointsTrendData}
                     margin={{ right: 170, bottom: 24, left: 4 }}
                   >
@@ -2655,11 +2683,14 @@ function RiderStatisticsView() {
               <h2>Teammate Comparison</h2>
             </div>
             {teammateComparisons.length ? (
-              teammateComparisons.map(({ category, teammate, pairs }) => (
-                <div className="chart-card" key={`${category}-${teammate}`}>
+              teammateComparisons.map(({ category, teammate, year, pairs }) => (
+                <div
+                  className="chart-card"
+                  key={`${category}-${teammate}-${year}`}
+                >
                   <div className="chart-toolbar">
                     <h2>
-                      {category} · {teammate}
+                      {category} · {teammate} · {year}
                     </h2>
                   </div>
                   <DataTable
@@ -2769,7 +2800,7 @@ function RiderStatisticsView() {
                       name="MotoGP"
                       dataKey="MotoGP"
                       stackId="points"
-                      fill="#ff4d3d"
+                      fill="#d85b50"
                     >
                       <LabelList
                         dataKey="MotoGP"
@@ -2786,7 +2817,7 @@ function RiderStatisticsView() {
                       name="Moto2"
                       dataKey="Moto2"
                       stackId="points"
-                      fill="#4f9cff"
+                      fill="#4f86c6"
                     >
                       <LabelList
                         dataKey="Moto2"
@@ -2803,7 +2834,7 @@ function RiderStatisticsView() {
                       name="Moto3"
                       dataKey="Moto3"
                       stackId="points"
-                      fill="#ffc857"
+                      fill="#d5a93f"
                       radius={[5, 5, 0, 0]}
                     >
                       <LabelList
@@ -2838,7 +2869,7 @@ type PerformanceRow = Statistics & {
   dnfs: number
   classifiedStarts: number
   averageFinish: number | null
-  consistency: number | null
+  averagePointsPerWeekend: number | null
 }
 
 const percent = (value: number, total: number) =>
@@ -2847,6 +2878,7 @@ const percent = (value: number, total: number) =>
 function performanceRows(
   rows: (Statistics & { dnfs: number })[],
   entries: PointEntry[],
+  events: RaceEvent[],
 ): PerformanceRow[] {
   return rows.map((row) => {
     const finishes = entries.flatMap((entry) =>
@@ -2857,21 +2889,17 @@ function performanceRows(
     const averageFinish = finishes.length
       ? finishes.reduce((sum, value) => sum + value, 0) / finishes.length
       : null
-    const consistency =
-      averageFinish !== null && finishes.length > 1
-        ? Math.sqrt(
-            finishes.reduce(
-              (sum, value) => sum + (value - averageFinish) ** 2,
-              0,
-            ) / finishes.length,
-          )
-        : null
+    const weekends = events.filter((event) =>
+      event.sessions.some((session) =>
+        session.classification.some((result) => result.riderName === row.name),
+      ),
+    ).length
     return {
       ...row,
       classifiedStarts: row.starts,
       starts: row.starts + row.dnfs,
       averageFinish,
-      consistency,
+      averagePointsPerWeekend: weekends ? row.points / weekends : null,
     }
   })
 }
@@ -2880,8 +2908,8 @@ function PerformanceTable({ rows }: { rows: PerformanceRow[] }) {
   return (
     <>
       <p className="statistics-description">
-        Rates include every race start. Consistency is the standard deviation of
-        classified finishes, where a lower number means steadier results.
+        Rates include every race start. Average points per weekend includes race
+        and sprint points from every weekend in which the rider appeared.
       </p>
       <DataTable
         rows={rows}
@@ -2916,10 +2944,17 @@ function PerformanceTable({ rows }: { rows: PerformanceRow[] }) {
           },
           {
             key: 'pointsStart',
-            label: 'Pts/start',
+            label: 'Avg pts/start',
             value: (row) =>
               row.starts ? (row.points / row.starts).toFixed(1) : '—',
             sort: (row) => (row.starts ? row.points / row.starts : 0),
+            align: 'right',
+          },
+          {
+            key: 'averagePointsPerWeekend',
+            label: 'Avg pts/weekend',
+            value: (row) => row.averagePointsPerWeekend?.toFixed(1) ?? '—',
+            sort: (row) => row.averagePointsPerWeekend ?? 0,
             align: 'right',
           },
           {
@@ -2941,13 +2976,6 @@ function PerformanceTable({ rows }: { rows: PerformanceRow[] }) {
             label: 'DNF %',
             value: (row) => percent(row.dnfs, row.starts),
             sort: (row) => (row.starts ? row.dnfs / row.starts : 0),
-            align: 'right',
-          },
-          {
-            key: 'consistency',
-            label: 'Consistency',
-            value: (row) => row.consistency?.toFixed(2) ?? '—',
-            sort: (row) => row.consistency ?? 999,
             align: 'right',
           },
         ]}
@@ -3247,7 +3275,13 @@ export function StatisticsPage() {
                   <p className="eyebrow">Comparable performance</p>
                   <h2>Performance</h2>
                 </div>
-                <PerformanceTable rows={performanceRows(rows, entries)} />
+                <PerformanceTable
+                  rows={performanceRows(
+                    rows,
+                    entries,
+                    query.data?.events ?? [],
+                  )}
+                />
               </>
             )}
             {yearView === 'points efficiency' && (
