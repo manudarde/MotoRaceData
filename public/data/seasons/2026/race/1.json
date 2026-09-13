@@ -4917,7 +4917,7 @@
           "id": "a94fd21a-01d9-4eb8-bd69-a749dcc09453",
           "type": "RAC",
           "number": null,
-          "status": "NOT-STARTED",
+          "status": "CURRENT",
           "date": "2026-09-13T11:00:00+00:00",
           "classification": []
         }
