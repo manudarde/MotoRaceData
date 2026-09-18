@@ -41,6 +41,7 @@ import {
   pointEntries,
   racePoints,
   riderEventPositions,
+  riderPointsToLeader,
   riderStandings,
   riderStatistics,
   teamStandings,
@@ -3100,6 +3101,7 @@ export function StatisticsPage() {
   }
   const [yearView, setYearView] = useState('details')
   const [podiumType, setPodiumType] = useState('both')
+  const [pointsRider, setPointsRider] = useState('')
   const hasSprint = category === 3
   const effectivePodiumType = hasSprint ? podiumType : 'race'
   const eventIds =
@@ -3139,6 +3141,25 @@ export function StatisticsPage() {
     poles: poleWinners.filter((name) => name === row.name).length,
     dnfs: dnfRiders.filter((name) => name === row.name).length,
   }))
+  const selectedPointsRider = rows.some((row) => row.name === pointsRider)
+    ? pointsRider
+    : (rows[0]?.name ?? '')
+  const pointsRiderOptions = [...rows].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  )
+  const pointsToLeader = riderPointsToLeader(
+    entries,
+    query.data?.events ?? [],
+    selectedPointsRider,
+  )
+  const pointsToLeaderMinimum =
+    Math.floor(
+      Math.min(0, ...pointsToLeader.map((point) => point.pointsToLeader)) / 10,
+    ) * 10
+  const pointsToLeaderTicks = Array.from(
+    { length: Math.abs(pointsToLeaderMinimum) / 10 + 1 },
+    (_, index) => pointsToLeaderMinimum + index * 10,
+  )
   const sessionMaximums = [
     ...new Map(
       entries.map((entry) => [
@@ -3255,6 +3276,7 @@ export function StatisticsPage() {
           'performance',
           'points efficiency',
           'podium breakdown',
+          'points to leader',
         ]}
       />
       <DataGate loading={loading} error={error}>
@@ -3400,6 +3422,88 @@ export function StatisticsPage() {
                         />
                       </Bar>
                     </BarChart>
+                  </ResponsiveContainer>
+                </div>
+              </>
+            )}
+            {yearView === 'points to leader' && (
+              <>
+                <div className="section-heading statistics-subheading">
+                  <p className="eyebrow">Championship deficit</p>
+                  <h2>Points to Leader</h2>
+                </div>
+                <p className="statistics-description">
+                  The selected rider&apos;s cumulative points difference to the
+                  championship leader after each race weekend. Deficits are
+                  negative; zero means the rider is tied for the lead.
+                </p>
+                <div className="chart-card points-to-leader-chart">
+                  <div className="chart-toolbar">
+                    <h2>{selectedPointsRider}</h2>
+                    <div className="points-to-leader-select">
+                      <Select
+                        label="Rider"
+                        value={selectedPointsRider}
+                        onChange={setPointsRider}
+                      >
+                        {pointsRiderOptions.map((row) => (
+                          <option key={row.name} value={row.name}>
+                            {row.name}
+                          </option>
+                        ))}
+                      </Select>
+                    </div>
+                  </div>
+                  <ResponsiveContainer width="100%" height={560}>
+                    <LineChart
+                      data={pointsToLeader}
+                      margin={{ top: 12, right: 24, bottom: 24, left: 8 }}
+                    >
+                      <CartesianGrid strokeDasharray="3 3" />
+                      <XAxis
+                        dataKey="circuit"
+                        interval={0}
+                        angle={-35}
+                        textAnchor="end"
+                        height={120}
+                        tick={{ fontSize: 11 }}
+                      />
+                      <YAxis
+                        allowDecimals={false}
+                        domain={[pointsToLeaderMinimum, 0]}
+                        ticks={pointsToLeaderTicks}
+                        label={{
+                          value: 'Points to leader',
+                          angle: -90,
+                          position: 'insideLeft',
+                          style: { textAnchor: 'middle' },
+                        }}
+                      />
+                      <Tooltip
+                        formatter={(value) => [
+                          `${formatPoints(Number(value))} pts`,
+                          'Points to leader',
+                        ]}
+                        labelFormatter={(_, payload) =>
+                          payload[0]?.payload?.event ?? ''
+                        }
+                        contentStyle={{
+                          background: '#fff',
+                          borderColor: '#dfe4e9',
+                          borderRadius: 9,
+                        }}
+                        labelStyle={{ color: '#424a53', fontWeight: 700 }}
+                      />
+                      <Line
+                        type="monotone"
+                        name="Points to leader"
+                        dataKey="pointsToLeader"
+                        stroke="var(--accent)"
+                        strokeWidth={3}
+                        dot={{ r: 4 }}
+                        activeDot={{ r: 6 }}
+                      />
+                    </LineChart>
                   </ResponsiveContainer>
                 </div>
               </>

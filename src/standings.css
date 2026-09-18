@@ -19,7 +19,9 @@
   flex: 1;
 }
 
-.trend-filter-group .trend-filter { flex: 0 1 240px; }
+.trend-filter-group .trend-filter {
+  flex: 0 1 240px;
+}
 
 .trend-filter summary {
   min-height: 42px;
@@ -31,9 +33,22 @@
   list-style: none;
 }
 
-.trend-filter summary::-webkit-details-marker { display: none; }
-.trend-filter summary span { display: block; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
-.trend-filter summary strong { display: block; margin-top: 3px; font-size: 13px; }
+.trend-filter summary::-webkit-details-marker {
+  display: none;
+}
+.trend-filter summary span {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.trend-filter summary strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 13px;
+}
 
 .trend-filter-menu {
   position: absolute;
@@ -50,19 +65,84 @@
   box-shadow: var(--shadow);
 }
 
-.trend-filter-menu > label { display: flex; align-items: center; gap: 9px; padding: 8px; border-radius: 7px; cursor: pointer; font-size: 13px; }
-.trend-filter-menu > label:hover { background: var(--surface-2); }
-.trend-filter-actions { display: flex; gap: 6px; padding: 2px 2px 8px; border-bottom: 1px solid var(--line); margin-bottom: 4px; }
-.trend-filter-actions button { border: 0; background: transparent; color: var(--accent); padding: 5px 6px; cursor: pointer; font-size: 12px; font-weight: 750; }
-.trend-empty { min-height: 300px; display: grid; place-items: center; color: var(--muted); }
-.statistics-subheading { margin-top: 34px; }
-.statistics-description { margin: -8px 0 16px; color: var(--muted); font-size: 14px; line-height: 1.55; }
-.field input { min-height: 42px; border: 1px solid var(--line); border-radius: 9px; background: var(--surface-2); color: var(--text); padding: 0 12px; }
+.trend-filter-menu > label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 8px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.trend-filter-menu > label:hover {
+  background: var(--surface-2);
+}
+.trend-filter-actions {
+  display: flex;
+  gap: 6px;
+  padding: 2px 2px 8px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 4px;
+}
+.trend-filter-actions button {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  padding: 5px 6px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 750;
+}
+.trend-empty {
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+}
+.statistics-subheading {
+  margin-top: 34px;
+}
+.statistics-description {
+  margin: -8px 0 16px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.points-to-leader-select {
+  width: min(320px, 100%);
+}
+.points-to-leader-select .field {
+  min-width: 0;
+}
+.points-to-leader-chart .recharts-yAxis .recharts-label {
+  fill: var(--muted);
+  font-size: 12px;
+}
+.field input {
+  min-height: 42px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--surface-2);
+  color: var(--text);
+  padding: 0 12px;
+}
 
 @media (max-width: 760px) {
-  nav { grid-template-columns: repeat(8, 1fr) !important; }
-  .chart-toolbar { display: grid; align-items: stretch; }
-  .trend-filter-group { display: grid; justify-content: stretch; }
-  .trend-filter-group .trend-filter { width: 100%; }
-  .trend-filter { width: 100%; }
+  nav {
+    grid-template-columns: repeat(8, 1fr) !important;
+  }
+  .chart-toolbar {
+    display: grid;
+    align-items: stretch;
+  }
+  .trend-filter-group {
+    display: grid;
+    justify-content: stretch;
+  }
+  .trend-filter-group .trend-filter {
+    width: 100%;
+  }
+  .trend-filter {
+    width: 100%;
+  }
 }
