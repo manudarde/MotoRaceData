@@ -1300,17 +1300,17 @@ export function StandingsPage() {
   const [selections, setSelections] = useState<Record<string, string[]>>({})
   const [riderTeamFilters, setRiderTeamFilters] = useState<string[]>([])
   const [riderBikeFilters, setRiderBikeFilters] = useState<string[]>([])
-  const [fromRace, setFromRace] = useState('')
-  const [toRace, setToRace] = useState('')
+  const [fromCircuit, setFromCircuit] = useState('')
+  const [toCircuit, setToCircuit] = useState('')
   const completedEventIds = new Set(entries.map((entry) => entry.eventId))
   const allEvents = (query.data?.events ?? []).filter((event) =>
     completedEventIds.has(event.id),
   )
-  const effectiveFrom = allEvents.some((event) => event.id === fromRace)
-    ? fromRace
+  const effectiveFrom = allEvents.some((event) => event.id === fromCircuit)
+    ? fromCircuit
     : (allEvents[0]?.id ?? '')
-  const effectiveTo = allEvents.some((event) => event.id === toRace)
-    ? toRace
+  const effectiveTo = allEvents.some((event) => event.id === toCircuit)
+    ? toCircuit
     : (allEvents.at(-1)?.id ?? '')
   const fromIndex = allEvents.findIndex((event) => event.id === effectiveFrom)
   const toIndex = allEvents.findIndex((event) => event.id === effectiveTo)
@@ -1401,15 +1401,15 @@ export function StandingsPage() {
     '#45a6a1',
     '#b06d91',
   ]
-  const selectFromRace = (eventId: string) => {
-    setFromRace(eventId)
+  const selectFromCircuit = (eventId: string) => {
+    setFromCircuit(eventId)
     if (allEvents.findIndex((event) => event.id === eventId) > toIndex)
-      setToRace(eventId)
+      setToCircuit(eventId)
   }
-  const selectToRace = (eventId: string) => {
-    setToRace(eventId)
+  const selectToCircuit = (eventId: string) => {
+    setToCircuit(eventId)
     if (allEvents.findIndex((event) => event.id === eventId) < fromIndex)
-      setFromRace(eventId)
+      setFromCircuit(eventId)
   }
 
   const selectTrendNames = (names: string[]) => {
@@ -1427,7 +1427,7 @@ export function StandingsPage() {
         title="Standings"
         description={
           scope === 'range'
-            ? 'Standings recalculated across a selected range of races.'
+            ? 'Standings recalculated across a selected range of circuits.'
             : 'Calculated rider, team and manufacturer championship standings.'
         }
       />
@@ -1435,20 +1435,24 @@ export function StandingsPage() {
       {scope === 'range' && (
         <div className="filters subfilters">
           <Select
-            label="From race"
+            label="From circuit"
             value={effectiveFrom}
-            onChange={selectFromRace}
+            onChange={selectFromCircuit}
           >
             {allEvents.map((event) => (
               <option key={event.id} value={event.id}>
-                {event.name} — {event.circuit}
+                {event.circuit}
               </option>
             ))}
           </Select>
-          <Select label="To race" value={effectiveTo} onChange={selectToRace}>
+          <Select
+            label="To circuit"
+            value={effectiveTo}
+            onChange={selectToCircuit}
+          >
             {allEvents.map((event) => (
               <option key={event.id} value={event.id}>
-                {event.name} — {event.circuit}
+                {event.circuit}
               </option>
             ))}
           </Select>
@@ -1570,7 +1574,7 @@ export function StandingsPage() {
 }
 
 export function PointsByRacePage() {
-  const { query, entries, year } = usePoints()
+  const { query, entries, year, category } = usePoints()
   const { params, set } = useFilterState()
   const [seeResults, setSeeResults] = useState(false)
   const eventId = params.get('event') ?? ''
@@ -1619,7 +1623,7 @@ export function PointsByRacePage() {
         title="Points by Race"
         description="Sprint, race and combined points for a selected event."
       />
-      <BaseFilters event />
+      <BaseFilters event eventAsCircuit />
       <div className="summary-actions">
         <button
           type="button"
@@ -1636,7 +1640,10 @@ export function PointsByRacePage() {
             <DataTable
               className="compact-points-table"
               rows={riders}
-              initialSort={{ key: 'total', desc: true }}
+              initialSort={{
+                key: category === 3 ? 'total' : 'race',
+                desc: true,
+              }}
               rowKey={(r) => r.name}
               columns={[
                 {
@@ -1651,29 +1658,35 @@ export function PointsByRacePage() {
                   value: (r) => r.number ?? '—',
                   sort: (r) => r.number ?? 999,
                 },
-                {
-                  key: 'sprint',
-                  label: 'Sprint',
-                  value: (r) => (
-                    <span className="points-with-result">
-                      <PointHighlight
-                        value={r.sprint}
-                        medal={
-                          r.sprint === 12
-                            ? 'gold'
-                            : r.sprint === 9
-                              ? 'silver'
-                              : r.sprint === 7
-                                ? 'bronze'
-                                : ''
-                        }
-                      />
-                      {seeResults && <small>P{r.sprintResult ?? '—'}</small>}
-                    </span>
-                  ),
-                  sort: (r) => r.sprint,
-                  align: 'right',
-                },
+                ...(category === 3
+                  ? [
+                      {
+                        key: 'sprint',
+                        label: 'Sprint',
+                        value: (r: (typeof riders)[number]) => (
+                          <span className="points-with-result">
+                            <PointHighlight
+                              value={r.sprint}
+                              medal={
+                                r.sprint === 12
+                                  ? 'gold'
+                                  : r.sprint === 9
+                                    ? 'silver'
+                                    : r.sprint === 7
+                                      ? 'bronze'
+                                      : ''
+                              }
+                            />
+                            {seeResults && (
+                              <small>P{r.sprintResult ?? '—'}</small>
+                            )}
+                          </span>
+                        ),
+                        sort: (r: (typeof riders)[number]) => r.sprint,
+                        align: 'right' as const,
+                      },
+                    ]
+                  : []),
                 {
                   key: 'race',
                   label: 'Race',
@@ -1697,18 +1710,22 @@ export function PointsByRacePage() {
                   sort: (r) => r.race,
                   align: 'right',
                 },
-                {
-                  key: 'total',
-                  label: 'Total',
-                  value: (r) => (
-                    <PointHighlight
-                      value={r.total}
-                      medal={r.total === 37 ? 'perfect' : ''}
-                    />
-                  ),
-                  sort: (r) => r.total,
-                  align: 'right',
-                },
+                ...(category === 3
+                  ? [
+                      {
+                        key: 'total',
+                        label: 'Total',
+                        value: (r: (typeof riders)[number]) => (
+                          <PointHighlight
+                            value={r.total}
+                            medal={r.total === 37 ? 'perfect' : ''}
+                          />
+                        ),
+                        sort: (r: (typeof riders)[number]) => r.total,
+                        align: 'right' as const,
+                      },
+                    ]
+                  : []),
               ]}
             />
           ) : (
@@ -1767,6 +1784,9 @@ export function PointsByYearPage() {
   const { query, entries } = usePoints()
   const standings = riderStandings(entries)
   const events = [...new Map(entries.map((e) => [e.eventId, e])).values()]
+  const circuitByEvent = new Map(
+    query.data?.events.map((event) => [event.id, event.circuit]) ?? [],
+  )
   const rows = standings.map((rider) => ({
     rider,
     values: events.map((event) =>
@@ -1804,7 +1824,7 @@ export function PointsByYearPage() {
     <>
       <PageHeader
         title="Full Year Points"
-        description="Event-by-event scoring with season totals and rider comparisons."
+        description="Circuit-by-circuit scoring with season totals and rider comparisons."
       />
       <BaseFilters />
       <DataGate loading={query.isLoading} error={query.error}>
@@ -1825,7 +1845,7 @@ export function PointsByYearPage() {
                         key={event.eventId}
                       >
                         <button onClick={() => toggleSort(event.eventId)}>
-                          {event.eventName}
+                          {circuitByEvent.get(event.eventId) ?? event.eventName}
                           {sortLabel(event.eventId)}
                         </button>
                       </th>
