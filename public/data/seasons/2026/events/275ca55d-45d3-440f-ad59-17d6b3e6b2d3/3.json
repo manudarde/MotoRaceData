@@ -3,7 +3,7 @@
   "year": 2026,
   "event": {
     "id": "275ca55d-45d3-440f-ad59-17d6b3e6b2d3",
-    "name": "Pertamina Grand Prix of Indonesia",
+    "name": "PERTAMINA GRAND PRIX OF INDONESIA ",
     "circuit": "Pertamina Mandalika Circuit",
     "country": "Indonesia",
     "startDate": "2026-10-09",
@@ -77,7 +77,7 @@
       "type": "RAC",
       "number": null,
       "status": "NOT-STARTED",
-      "date": "2026-10-11T14:00:00+00:00",
+      "date": "2026-10-11T15:00:00+00:00",
       "classification": []
     }
   ]
