@@ -90,6 +90,19 @@
         },
         {
           "position": 6,
+          "riderName": "Adrian Fernandez",
+          "riderNumber": 31,
+          "teamName": "Leopard Racing",
+          "constructorName": "Honda",
+          "totalLaps": 14,
+          "time": "02:15.136",
+          "totalTime": "",
+          "topSpeed": 232.8,
+          "gapFirst": "0.927",
+          "gapPrevious": "0.297"
+        },
+        {
+          "position": 7,
           "riderName": "Casey O'gorman",
           "riderNumber": 67,
           "teamName": "SIC58 Squadra Corse",
@@ -99,10 +112,10 @@
           "totalTime": "",
           "topSpeed": 230.3,
           "gapFirst": "1.067",
-          "gapPrevious": "0.437"
+          "gapPrevious": "0.140"
         },
         {
-          "position": 7,
+          "position": 8,
           "riderName": "Cormac Buchanan",
           "riderNumber": 14,
           "teamName": "CODE Motorsports",
@@ -115,7 +128,7 @@
           "gapPrevious": "0.091"
         },
         {
-          "position": 8,
+          "position": 9,
           "riderName": "Matteo Bertelle",
           "riderNumber": 18,
           "teamName": "LEVEL UP - MTA",
@@ -128,10 +141,10 @@
           "gapPrevious": "0.087"
         },
         {
-          "position": 9,
+          "position": 10,
           "riderName": "Joel Kelso",
           "riderNumber": 66,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 12,
           "time": "02:15.501",
@@ -141,7 +154,7 @@
           "gapPrevious": "0.047"
         },
         {
-          "position": 10,
+          "position": 11,
           "riderName": "Rico Salmela",
           "riderNumber": 27,
           "teamName": "Red Bull KTM Tech3",
@@ -154,7 +167,7 @@
           "gapPrevious": "0.042"
         },
         {
-          "position": 11,
+          "position": 12,
           "riderName": "Valentin Perrone",
           "riderNumber": 73,
           "teamName": "Red Bull KTM Tech3",
@@ -167,7 +180,7 @@
           "gapPrevious": "0.234"
         },
         {
-          "position": 12,
+          "position": 13,
           "riderName": "Scott Ogden",
           "riderNumber": 19,
           "teamName": "CIP Green Power",
@@ -180,7 +193,7 @@
           "gapPrevious": "0.066"
         },
         {
-          "position": 13,
+          "position": 14,
           "riderName": "Brian Uriarte",
           "riderNumber": 51,
           "teamName": "Red Bull KTM Ajo",
@@ -193,7 +206,7 @@
           "gapPrevious": "0.013"
         },
         {
-          "position": 14,
+          "position": 15,
           "riderName": "Veda Pratama",
           "riderNumber": 9,
           "teamName": "Honda Team Asia",
@@ -206,7 +219,7 @@
           "gapPrevious": "0.097"
         },
         {
-          "position": 15,
+          "position": 16,
           "riderName": "Ruche Moodley",
           "riderNumber": 21,
           "teamName": "CODE Motorsports",
@@ -219,7 +232,7 @@
           "gapPrevious": "0.029"
         },
         {
-          "position": 16,
+          "position": 17,
           "riderName": "Adrian Cruces",
           "riderNumber": 11,
           "teamName": "CIP Green Power",
@@ -232,7 +245,7 @@
           "gapPrevious": "0.329"
         },
         {
-          "position": 17,
+          "position": 18,
           "riderName": "Ryusei Yamanaka",
           "riderNumber": 6,
           "teamName": "AEON Credit - MT Helmets - MSI",
@@ -245,10 +258,10 @@
           "gapPrevious": "0.057"
         },
         {
-          "position": 18,
+          "position": 19,
           "riderName": "Eddie O'shea",
           "riderNumber": 8,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 13,
           "time": "02:16.651",
@@ -258,7 +271,7 @@
           "gapPrevious": "0.283"
         },
         {
-          "position": 19,
+          "position": 20,
           "riderName": "Hakim Danish",
           "riderNumber": 13,
           "teamName": "AEON Credit - MT Helmets - MSI",
@@ -271,7 +284,7 @@
           "gapPrevious": "0.058"
         },
         {
-          "position": 20,
+          "position": 21,
           "riderName": "Jesus Rios",
           "riderNumber": 54,
           "teamName": "Rivacold Snipers Team",
@@ -284,7 +297,7 @@
           "gapPrevious": "0.141"
         },
         {
-          "position": 21,
+          "position": 22,
           "riderName": "Nicola Carraro",
           "riderNumber": 10,
           "teamName": "Rivacold Snipers Team",
@@ -297,7 +310,7 @@
           "gapPrevious": "0.060"
         },
         {
-          "position": 22,
+          "position": 23,
           "riderName": "Zen Mitani",
           "riderNumber": 32,
           "teamName": "Honda Team Asia",
@@ -310,7 +323,7 @@
           "gapPrevious": "0.302"
         },
         {
-          "position": 23,
+          "position": 24,
           "riderName": "Marcos Uriarte",
           "riderNumber": 88,
           "teamName": "Liqui Moly Dynavolt Intact GP",
@@ -323,7 +336,7 @@
           "gapPrevious": "0.328"
         },
         {
-          "position": 24,
+          "position": 25,
           "riderName": "Leo Rammerstorfer",
           "riderNumber": 5,
           "teamName": "SIC58 Squadra Corse",
@@ -334,19 +347,6 @@
           "topSpeed": 226.3,
           "gapFirst": "3.565",
           "gapPrevious": "0.234"
-        },
-        {
-          "position": null,
-          "riderName": "Adrian Fernandez",
-          "riderNumber": 31,
-          "teamName": "Leopard Racing",
-          "constructorName": "Honda",
-          "totalLaps": 14,
-          "time": "02:15.136",
-          "totalTime": "",
-          "topSpeed": 232.8,
-          "gapFirst": "0.927",
-          "gapPrevious": "0.000"
         }
       ]
     },
@@ -439,7 +439,7 @@
           "position": 7,
           "riderName": "Joel Kelso",
           "riderNumber": 66,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 14,
           "time": "02:14.360",
@@ -489,19 +489,32 @@
         },
         {
           "position": 11,
+          "riderName": "Adrian Fernandez",
+          "riderNumber": 31,
+          "teamName": "Leopard Racing",
+          "constructorName": "Honda",
+          "totalLaps": 12,
+          "time": "02:14.402",
+          "totalTime": "",
+          "topSpeed": 232.8,
+          "gapFirst": "0.645",
+          "gapPrevious": "0.026"
+        },
+        {
+          "position": 12,
           "riderName": "Eddie O'shea",
           "riderNumber": 8,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 14,
           "time": "02:14.403",
           "totalTime": "",
           "topSpeed": 238.6,
           "gapFirst": "0.646",
-          "gapPrevious": "0.027"
+          "gapPrevious": "0.001"
         },
         {
-          "position": 12,
+          "position": 13,
           "riderName": "Brian Uriarte",
           "riderNumber": 51,
           "teamName": "Red Bull KTM Ajo",
@@ -514,7 +527,7 @@
           "gapPrevious": "0.014"
         },
         {
-          "position": 13,
+          "position": 14,
           "riderName": "Veda Pratama",
           "riderNumber": 9,
           "teamName": "Honda Team Asia",
@@ -527,7 +540,7 @@
           "gapPrevious": "0.067"
         },
         {
-          "position": 14,
+          "position": 15,
           "riderName": "Ryusei Yamanaka",
           "riderNumber": 6,
           "teamName": "AEON Credit - MT Helmets - MSI",
@@ -540,7 +553,7 @@
           "gapPrevious": "0.159"
         },
         {
-          "position": 15,
+          "position": 16,
           "riderName": "Cormac Buchanan",
           "riderNumber": 14,
           "teamName": "CODE Motorsports",
@@ -553,7 +566,7 @@
           "gapPrevious": "0.060"
         },
         {
-          "position": 16,
+          "position": 17,
           "riderName": "Scott Ogden",
           "riderNumber": 19,
           "teamName": "CIP Green Power",
@@ -566,7 +579,7 @@
           "gapPrevious": "0.011"
         },
         {
-          "position": 17,
+          "position": 18,
           "riderName": "Ruche Moodley",
           "riderNumber": 21,
           "teamName": "CODE Motorsports",
@@ -579,7 +592,7 @@
           "gapPrevious": "0.144"
         },
         {
-          "position": 18,
+          "position": 19,
           "riderName": "Adrian Cruces",
           "riderNumber": 11,
           "teamName": "CIP Green Power",
@@ -592,7 +605,7 @@
           "gapPrevious": "0.016"
         },
         {
-          "position": 19,
+          "position": 20,
           "riderName": "Jesus Rios",
           "riderNumber": 54,
           "teamName": "Rivacold Snipers Team",
@@ -605,7 +618,7 @@
           "gapPrevious": "0.096"
         },
         {
-          "position": 20,
+          "position": 21,
           "riderName": "Hakim Danish",
           "riderNumber": 13,
           "teamName": "AEON Credit - MT Helmets - MSI",
@@ -618,7 +631,7 @@
           "gapPrevious": "0.043"
         },
         {
-          "position": 21,
+          "position": 22,
           "riderName": "Zen Mitani",
           "riderNumber": 32,
           "teamName": "Honda Team Asia",
@@ -631,7 +644,7 @@
           "gapPrevious": "0.112"
         },
         {
-          "position": 22,
+          "position": 23,
           "riderName": "Nicola Carraro",
           "riderNumber": 10,
           "teamName": "Rivacold Snipers Team",
@@ -644,7 +657,7 @@
           "gapPrevious": "0.111"
         },
         {
-          "position": 23,
+          "position": 24,
           "riderName": "Marcos Uriarte",
           "riderNumber": 88,
           "teamName": "Liqui Moly Dynavolt Intact GP",
@@ -657,7 +670,7 @@
           "gapPrevious": "0.194"
         },
         {
-          "position": 24,
+          "position": 25,
           "riderName": "Leo Rammerstorfer",
           "riderNumber": 5,
           "teamName": "SIC58 Squadra Corse",
@@ -668,19 +681,6 @@
           "topSpeed": 235.4,
           "gapFirst": "2.708",
           "gapPrevious": "1.035"
-        },
-        {
-          "position": null,
-          "riderName": "Adrian Fernandez",
-          "riderNumber": 31,
-          "teamName": "Leopard Racing",
-          "constructorName": "Honda",
-          "totalLaps": 12,
-          "time": "02:14.402",
-          "totalTime": "",
-          "topSpeed": 232.8,
-          "gapFirst": "0.645",
-          "gapPrevious": "0.000"
         }
       ]
     },
@@ -771,6 +771,19 @@
         },
         {
           "position": 7,
+          "riderName": "Adrian Fernandez",
+          "riderNumber": 31,
+          "teamName": "Leopard Racing",
+          "constructorName": "Honda",
+          "totalLaps": 13,
+          "time": "02:13.782",
+          "totalTime": "",
+          "topSpeed": 239.7,
+          "gapFirst": "0.592",
+          "gapPrevious": "0.127"
+        },
+        {
+          "position": 8,
           "riderName": "Marco Morelli",
           "riderNumber": 97,
           "teamName": "CFMOTO Gaviota Aspar Team",
@@ -780,10 +793,10 @@
           "totalTime": "",
           "topSpeed": 240.8,
           "gapFirst": "0.601",
-          "gapPrevious": "0.136"
+          "gapPrevious": "0.009"
         },
         {
-          "position": 8,
+          "position": 9,
           "riderName": "Scott Ogden",
           "riderNumber": 19,
           "teamName": "CIP Green Power",
@@ -796,7 +809,7 @@
           "gapPrevious": "0.008"
         },
         {
-          "position": 9,
+          "position": 10,
           "riderName": "Veda Pratama",
           "riderNumber": 9,
           "teamName": "Honda Team Asia",
@@ -809,7 +822,7 @@
           "gapPrevious": "0.020"
         },
         {
-          "position": 10,
+          "position": 11,
           "riderName": "Brian Uriarte",
           "riderNumber": 51,
           "teamName": "Red Bull KTM Ajo",
@@ -822,7 +835,7 @@
           "gapPrevious": "0.257"
         },
         {
-          "position": 11,
+          "position": 12,
           "riderName": "Matteo Bertelle",
           "riderNumber": 18,
           "teamName": "LEVEL UP - MTA",
@@ -835,7 +848,7 @@
           "gapPrevious": "0.151"
         },
         {
-          "position": 12,
+          "position": 13,
           "riderName": "Rico Salmela",
           "riderNumber": 27,
           "teamName": "Red Bull KTM Tech3",
@@ -848,7 +861,7 @@
           "gapPrevious": "0.045"
         },
         {
-          "position": 13,
+          "position": 14,
           "riderName": "Ruche Moodley",
           "riderNumber": 21,
           "teamName": "CODE Motorsports",
@@ -861,10 +874,10 @@
           "gapPrevious": "0.016"
         },
         {
-          "position": 14,
+          "position": 15,
           "riderName": "Joel Kelso",
           "riderNumber": 66,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 14,
           "time": "02:14.341",
@@ -874,7 +887,7 @@
           "gapPrevious": "0.053"
         },
         {
-          "position": 15,
+          "position": 16,
           "riderName": "Hakim Danish",
           "riderNumber": 13,
           "teamName": "AEON Credit - MT Helmets - MSI",
@@ -887,7 +900,7 @@
           "gapPrevious": "0.088"
         },
         {
-          "position": 16,
+          "position": 17,
           "riderName": "Zen Mitani",
           "riderNumber": 32,
           "teamName": "Honda Team Asia",
@@ -900,10 +913,10 @@
           "gapPrevious": "0.061"
         },
         {
-          "position": 17,
+          "position": 18,
           "riderName": "Eddie O'shea",
           "riderNumber": 8,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 14,
           "time": "02:14.602",
@@ -913,7 +926,7 @@
           "gapPrevious": "0.112"
         },
         {
-          "position": 18,
+          "position": 19,
           "riderName": "Marcos Uriarte",
           "riderNumber": 88,
           "teamName": "Liqui Moly Dynavolt Intact GP",
@@ -926,7 +939,7 @@
           "gapPrevious": "0.340"
         },
         {
-          "position": 19,
+          "position": 20,
           "riderName": "Cormac Buchanan",
           "riderNumber": 14,
           "teamName": "CODE Motorsports",
@@ -939,7 +952,7 @@
           "gapPrevious": "0.150"
         },
         {
-          "position": 20,
+          "position": 21,
           "riderName": "Ryusei Yamanaka",
           "riderNumber": 6,
           "teamName": "AEON Credit - MT Helmets - MSI",
@@ -952,7 +965,7 @@
           "gapPrevious": "0.301"
         },
         {
-          "position": 21,
+          "position": 22,
           "riderName": "Jesus Rios",
           "riderNumber": 54,
           "teamName": "Rivacold Snipers Team",
@@ -965,7 +978,7 @@
           "gapPrevious": "0.016"
         },
         {
-          "position": 22,
+          "position": 23,
           "riderName": "Nicola Carraro",
           "riderNumber": 10,
           "teamName": "Rivacold Snipers Team",
@@ -978,7 +991,7 @@
           "gapPrevious": "0.332"
         },
         {
-          "position": 23,
+          "position": 24,
           "riderName": "Leo Rammerstorfer",
           "riderNumber": 5,
           "teamName": "SIC58 Squadra Corse",
@@ -1001,19 +1014,6 @@
           "totalTime": "",
           "topSpeed": 238.6,
           "gapFirst": "1.089",
-          "gapPrevious": "0.497"
-        },
-        {
-          "position": null,
-          "riderName": "Adrian Fernandez",
-          "riderNumber": 31,
-          "teamName": "Leopard Racing",
-          "constructorName": "Honda",
-          "totalLaps": 13,
-          "time": "02:13.782",
-          "totalTime": "",
-          "topSpeed": 239.7,
-          "gapFirst": "0.592",
           "gapPrevious": "0.000"
         }
       ]
@@ -1257,6 +1257,19 @@
         },
         {
           "position": 7,
+          "riderName": "Adrian Fernandez",
+          "riderNumber": 31,
+          "teamName": "Leopard Racing",
+          "constructorName": "Honda",
+          "totalLaps": 6,
+          "time": "02:12.917",
+          "totalTime": "",
+          "topSpeed": 236.5,
+          "gapFirst": "0.810",
+          "gapPrevious": "0.048"
+        },
+        {
+          "position": 8,
           "riderName": "Maximo Quiles",
           "riderNumber": 28,
           "teamName": "CFMOTO Gaviota Aspar Team",
@@ -1266,10 +1279,10 @@
           "totalTime": "",
           "topSpeed": 233.3,
           "gapFirst": "0.889",
-          "gapPrevious": "0.127"
+          "gapPrevious": "0.079"
         },
         {
-          "position": 8,
+          "position": 9,
           "riderName": "Rico Salmela",
           "riderNumber": 27,
           "teamName": "Red Bull KTM Tech3",
@@ -1282,7 +1295,7 @@
           "gapPrevious": "0.009"
         },
         {
-          "position": 9,
+          "position": 10,
           "riderName": "Scott Ogden",
           "riderNumber": 19,
           "teamName": "CIP Green Power",
@@ -1295,10 +1308,10 @@
           "gapPrevious": "0.239"
         },
         {
-          "position": 10,
+          "position": 11,
           "riderName": "Joel Kelso",
           "riderNumber": 66,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 5,
           "time": "02:13.324",
@@ -1308,7 +1321,7 @@
           "gapPrevious": "0.080"
         },
         {
-          "position": 11,
+          "position": 12,
           "riderName": "Zen Mitani",
           "riderNumber": 32,
           "teamName": "Honda Team Asia",
@@ -1321,7 +1334,7 @@
           "gapPrevious": "0.210"
         },
         {
-          "position": 12,
+          "position": 13,
           "riderName": "Matteo Bertelle",
           "riderNumber": 18,
           "teamName": "LEVEL UP - MTA",
@@ -1334,7 +1347,7 @@
           "gapPrevious": "0.020"
         },
         {
-          "position": 13,
+          "position": 14,
           "riderName": "Brian Uriarte",
           "riderNumber": 51,
           "teamName": "Red Bull KTM Ajo",
@@ -1347,7 +1360,7 @@
           "gapPrevious": "0.007"
         },
         {
-          "position": 14,
+          "position": 15,
           "riderName": "Adrian Cruces",
           "riderNumber": 11,
           "teamName": "CIP Green Power",
@@ -1360,7 +1373,7 @@
           "gapPrevious": "0.090"
         },
         {
-          "position": 15,
+          "position": 16,
           "riderName": "Nicola Carraro",
           "riderNumber": 10,
           "teamName": "Rivacold Snipers Team",
@@ -1373,10 +1386,10 @@
           "gapPrevious": "0.012"
         },
         {
-          "position": 16,
+          "position": 17,
           "riderName": "Eddie O'shea",
           "riderNumber": 8,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 5,
           "time": "02:13.688",
@@ -1386,7 +1399,7 @@
           "gapPrevious": "0.025"
         },
         {
-          "position": 17,
+          "position": 18,
           "riderName": "Marco Morelli",
           "riderNumber": 97,
           "teamName": "CFMOTO Gaviota Aspar Team",
@@ -1397,19 +1410,6 @@
           "topSpeed": 233.3,
           "gapFirst": "2.539",
           "gapPrevious": "0.958"
-        },
-        {
-          "position": null,
-          "riderName": "Adrian Fernandez",
-          "riderNumber": 31,
-          "teamName": "Leopard Racing",
-          "constructorName": "Honda",
-          "totalLaps": 6,
-          "time": "02:12.917",
-          "totalTime": "",
-          "topSpeed": 236.5,
-          "gapFirst": "0.810",
-          "gapPrevious": "0.000"
         }
       ]
     },
@@ -1474,6 +1474,19 @@
         },
         {
           "position": 5,
+          "riderName": "Adrian Fernandez",
+          "riderNumber": 31,
+          "teamName": "Leopard Racing",
+          "constructorName": "Honda",
+          "totalLaps": 14,
+          "time": "",
+          "totalTime": "31:29.681",
+          "topSpeed": null,
+          "gapFirst": "9.192",
+          "gapPrevious": ""
+        },
+        {
+          "position": 6,
           "riderName": "Rico Salmela",
           "riderNumber": 27,
           "teamName": "Red Bull KTM Tech3",
@@ -1486,7 +1499,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 6,
+          "position": 7,
           "riderName": "Brian Uriarte",
           "riderNumber": 51,
           "teamName": "Red Bull KTM Ajo",
@@ -1499,7 +1512,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 7,
+          "position": 8,
           "riderName": "Adrian Cruces",
           "riderNumber": 11,
           "teamName": "CIP Green Power",
@@ -1512,7 +1525,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 8,
+          "position": 9,
           "riderName": "Matteo Bertelle",
           "riderNumber": 18,
           "teamName": "LEVEL UP - MTA",
@@ -1525,7 +1538,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 9,
+          "position": 10,
           "riderName": "Scott Ogden",
           "riderNumber": 19,
           "teamName": "CIP Green Power",
@@ -1538,10 +1551,10 @@
           "gapPrevious": ""
         },
         {
-          "position": 10,
+          "position": 11,
           "riderName": "Eddie O'shea",
           "riderNumber": 8,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 14,
           "time": "",
@@ -1551,7 +1564,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 11,
+          "position": 12,
           "riderName": "Marco Morelli",
           "riderNumber": 97,
           "teamName": "CFMOTO Gaviota Aspar Team",
@@ -1564,7 +1577,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 12,
+          "position": 13,
           "riderName": "Hakim Danish",
           "riderNumber": 13,
           "teamName": "AEON Credit - MT Helmets - MSI",
@@ -1577,7 +1590,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 13,
+          "position": 14,
           "riderName": "Marcos Uriarte",
           "riderNumber": 88,
           "teamName": "Liqui Moly Dynavolt Intact GP",
@@ -1590,7 +1603,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 14,
+          "position": 15,
           "riderName": "Jesus Rios",
           "riderNumber": 54,
           "teamName": "Rivacold Snipers Team",
@@ -1603,7 +1616,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 15,
+          "position": 16,
           "riderName": "Ruche Moodley",
           "riderNumber": 21,
           "teamName": "CODE Motorsports",
@@ -1616,7 +1629,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 16,
+          "position": 17,
           "riderName": "Nicola Carraro",
           "riderNumber": 10,
           "teamName": "Rivacold Snipers Team",
@@ -1629,7 +1642,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 17,
+          "position": 18,
           "riderName": "Ryusei Yamanaka",
           "riderNumber": 6,
           "teamName": "AEON Credit - MT Helmets - MSI",
@@ -1642,7 +1655,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 18,
+          "position": 19,
           "riderName": "Cormac Buchanan",
           "riderNumber": 14,
           "teamName": "CODE Motorsports",
@@ -1655,7 +1668,7 @@
           "gapPrevious": ""
         },
         {
-          "position": 19,
+          "position": 20,
           "riderName": "Leo Rammerstorfer",
           "riderNumber": 5,
           "teamName": "SIC58 Squadra Corse",
@@ -1710,7 +1723,7 @@
           "position": null,
           "riderName": "Joel Kelso",
           "riderNumber": 66,
-          "teamName": "GRYD - MLav Racing",
+          "teamName": "GRYD Racing",
           "constructorName": "Honda",
           "totalLaps": 8,
           "time": "",
@@ -1728,19 +1741,6 @@
           "totalLaps": 4,
           "time": "",
           "totalTime": "08:58.829",
-          "topSpeed": null,
-          "gapFirst": "0.000",
-          "gapPrevious": ""
-        },
-        {
-          "position": null,
-          "riderName": "Adrian Fernandez",
-          "riderNumber": 31,
-          "teamName": "Leopard Racing",
-          "constructorName": "Honda",
-          "totalLaps": 14,
-          "time": "",
-          "totalTime": "",
           "topSpeed": null,
           "gapFirst": "0.000",
           "gapPrevious": ""
