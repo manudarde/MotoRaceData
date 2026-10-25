@@ -6817,7 +6817,7 @@
           "id": "c15e9fd5-809e-4056-8518-d84adef6528c",
           "type": "RAC",
           "number": null,
-          "status": "NOT-STARTED",
+          "status": "CANCELLED",
           "date": "2026-10-25T12:15:00+00:00",
           "classification": []
         }

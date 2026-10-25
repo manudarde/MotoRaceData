@@ -1426,7 +1426,7 @@
       "id": "076f525d-f965-4e06-b682-0742a09c8cc2",
       "type": "WUP",
       "number": null,
-      "status": "NOT-STARTED",
+      "status": "CANCELLED",
       "date": "2026-10-25T09:40:00+00:00",
       "classification": []
     },
@@ -1434,7 +1434,7 @@
       "id": "963e4ac1-6a6d-4a48-9c91-72685599a9b6",
       "type": "RAC",
       "number": null,
-      "status": "NOT-STARTED",
+      "status": "CANCELLED",
       "date": "2026-10-25T14:00:00+00:00",
       "classification": []
     }
