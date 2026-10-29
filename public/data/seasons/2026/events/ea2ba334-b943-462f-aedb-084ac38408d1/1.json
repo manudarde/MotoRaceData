@@ -3,7 +3,7 @@
   "year": 2026,
   "event": {
     "id": "ea2ba334-b943-462f-aedb-084ac38408d1",
-    "name": "Petronas Grand Prix of Malaysia",
+    "name": "PETRONAS GRAND PRIX OF MALAYSIA ",
     "circuit": "Petronas Sepang International Circuit",
     "country": "Malaysia",
     "startDate": "2026-10-30",
@@ -16,6 +16,14 @@
     "legacyId": 1
   },
   "sessions": [
+    {
+      "id": "968c8825-afb9-4a0a-b8e1-475d399357fc",
+      "type": "RAC",
+      "number": null,
+      "status": "NOT-STARTED",
+      "date": "2026-10-29T15:30:00+00:00",
+      "classification": []
+    },
     {
       "id": "e265a440-86da-4c21-80ce-827aaffd2140",
       "type": "FP",
@@ -54,14 +62,6 @@
       "number": 2,
       "status": "NOT-STARTED",
       "date": "2026-10-31T13:10:00+00:00",
-      "classification": []
-    },
-    {
-      "id": "968c8825-afb9-4a0a-b8e1-475d399357fc",
-      "type": "RAC",
-      "number": null,
-      "status": "NOT-STARTED",
-      "date": "2026-11-01T11:00:00+00:00",
       "classification": []
     }
   ]
