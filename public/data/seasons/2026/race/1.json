@@ -6369,7 +6369,7 @@
           "type": "RAC",
           "number": null,
           "status": "FINISHED",
-          "date": "2026-10-29T15:30:00+00:00",
+          "date": "2026-11-01T12:00:00+00:00",
           "classification": [
             {
               "position": 1,
@@ -6702,7 +6702,7 @@
     },
     {
       "id": "5a880aba-62c4-413c-bb2d-b721683dd064",
-      "name": "Qatar Airways Grand Prix of Qatar",
+      "name": "QATAR AIRWAYS GRAND PRIX OF QATAR ",
       "circuit": "Lusail International Circuit",
       "country": "Qatar",
       "startDate": "2026-11-06",
